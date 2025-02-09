@@ -1,0 +1,1076 @@
+{% extends 'BACKOFFICE/base.html.twig' %}
+{%block body%}
+ <!-- Layout wrapper -->
+    <div class="layout-wrapper layout-content-navbar">
+      <div class="layout-container">
+        <!-- Menu -->
+
+        <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
+          <div class="app-brand demo">
+            <a href="index.html" class="app-brand-link">
+              <span class="app-brand-logo demo">
+              <img src="{{asset('assets/back-office/img/Logo.png')}}" alt class="w-px-30 h-auto rounded-circle" />
+              </span>
+              <span class="app-brand-text demo menu-text fw-bolder ms-2">HospiConnect</span>
+            </a>
+
+            <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none">
+              <i class="bx bx-chevron-left bx-sm align-middle"></i>
+            </a>
+          </div>
+
+          <div class="menu-inner-shadow"></div>
+
+          <ul class="menu-inner py-1">
+            <!-- Dashboard -->
+            <li class="menu-item active">
+              <a href="{{ path('back') }}" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-home-circle"></i>
+                <div data-i18n="Analytics">Tableau de bord</div>
+              </a>
+            </li>
+
+            <!-- Layouts -->
+            <li class="menu-item">
+
+              <ul class="menu-sub">
+                <li class="menu-item">
+                  <a href="layouts-without-menu.html" class="menu-link">
+                    <div data-i18n="Without menu">Without menu</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="layouts-without-navbar.html" class="menu-link">
+                    <div data-i18n="Without navbar">Without navbar</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="layouts-container.html" class="menu-link">
+                    <div data-i18n="Container">Container</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="layouts-fluid.html" class="menu-link">
+                    <div data-i18n="Fluid">Fluid</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="layouts-blank.html" class="menu-link">
+                    <div data-i18n="Blank">Blank</div>
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="menu-item">
+              <ul class="menu-sub">
+                <li class="menu-item">
+                  <a href="pages-account-settings-account.html" class="menu-link">
+                    <div data-i18n="Account">Account</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="pages-account-settings-notifications.html" class="menu-link">
+                    <div data-i18n="Notifications">Notifications</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="pages-account-settings-connections.html" class="menu-link">
+                    <div data-i18n="Connections">Connections</div>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="menu-item">
+              <ul class="menu-sub">
+                <li class="menu-item">
+                  <a href="{{ path('login') }}" class="menu-link" target="_blank">
+                    <div data-i18n="Basic">Login</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="{{ path('login') }}" class="menu-link" target="_blank">
+                    <div data-i18n="Basic">Register</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="{{ path('FP') }}" class="menu-link" target="_blank">
+                    <div data-i18n="Basic">Forgot Password</div>
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+            <!-- Components -->
+            <li class="menu-header small text-uppercase"><span class="menu-header-text"><strong>administration</strong></span></li>
+            <!-- Cards -->
+            <li class="menu-item">
+            <a href="{{ path('back') }}" class="menu-link">
+                 <img src="{{asset('assets/back-office/img/user-regular-24.png')}}" alt class="w-px-30 h-auto rounded-circle" />
+                <div data-i18n="Analytics"><strong>Utilisateurs</strong></div>
+              </a>
+            </li>
+            <!-- User interface -->
+            <li class="menu-item">
+              <a href="{{ path('back') }}" class="menu-link">
+                 <img src="{{asset('assets/back-office/img/first-aid-regular-24.png')}}" alt class="w-px-30 h-auto rounded-circle" />
+                <div data-i18n="Analytics"><strong>Matériel et Stock</strong></div>
+              </a>
+            </li>
+
+            <!-- Extended components -->
+            <li class="menu-item">
+            <a href="{{ path('back') }}" class="menu-link">
+                 <img src="{{asset('assets/back-office/img/clinic-regular-24.png')}}" alt class="w-px-30 h-auto rounded-circle" />
+                <div data-i18n="Extended UI"><strong>Consultation</strong></div>
+              </a>
+            </li>
+
+            <li class="menu-item">
+              <a href="{{ path('back') }}" class="menu-link">
+                <img src="{{asset('assets/back-office/img/donate-blood-regular-24.png')}}" alt class="w-px-30 h-auto rounded-circle" />
+                <div data-i18n="Dons"><strong>Dons</strong></div>
+              </a>
+            </li>
+
+            <li class="menu-item">
+              <a href="{{ path('back') }}" class="menu-link">
+                <img src="{{asset('assets/back-office/img/band-aid-regular-24.png')}}" alt class="w-px-30 h-auto rounded-circle" />
+                <div data-i18n="Opération"><strong>Opération</strong></div>
+              </a>
+            </li>
+
+
+            <li class="menu-item">
+              <a href="{{ path('back') }}" class="menu-link">
+                <img src="{{asset('assets/back-office/img/test-tube-regular-24.png')}}" alt class="w-px-30 h-auto rounded-circle" />
+                <div data-i18n="Laboratoire"><strong>Laboratoire</strong></div>
+              </a>
+            </li>
+
+            <!-- Forms & Tables -->
+            <li class="menu-header small text-uppercase"><span class="menu-header-text"><strong>Support &amp Assistance</strong> </span></li>
+            <!-- Forms -->
+            <li class="menu-item">
+              <a href="javascript:void(0);" class="menu-link menu-toggle">
+                <i class="menu-icon tf-icons bx bx-detail"></i>
+                <div data-i18n="Envoyer un email"><strong>Envoyer un email</strong></div>
+              </a>
+            </li>
+            <!--  Signaler un problème -->
+            <li class="menu-item">
+              <a href=" Signaler un problème-basic.html" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-table"></i>
+                <div data-i18n=" Signaler un problème"><strong>Signaler un problème</strong></div>
+              </a>
+            </li>
+            <!-- Misc -->
+          </ul>
+        </aside>
+        <!-- / Menu -->
+
+        <!-- Layout container -->
+        <div class="layout-page">
+          <!-- Navbar -->
+
+          <nav
+            class="layout-navbar container-xxl navbar navbar-expand-xl navbar-detached align-items-center bg-navbar-theme"
+            id="layout-navbar"
+          >
+            <div class="layout-menu-toggle navbar-nav align-items-xl-center me-3 me-xl-0 d-xl-none">
+              <a class="nav-item nav-link px-0 me-xl-4" href="javascript:void(0)">
+                <i class="bx bx-menu bx-sm"></i>
+              </a>
+            </div>
+
+            <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
+              <!-- Recherche -->
+              <div class="navbar-nav align-items-center">
+                <div class="nav-item d-flex align-items-center">
+                  <i class="bx bx-Recherche fs-4 lh-0"></i>
+                  <input
+                    type="text"
+                    class="form-control border-0 shadow-none"
+                    placeholder="Recherche..."
+                    aria-label="Recherche..."
+                  />
+                </div>
+              </div>
+              <!-- /Recherche -->
+
+              <ul class="navbar-nav flex-row align-items-center ms-auto">
+                <!-- Place this tag where you want the button to render. -->
+                <li class="nav-item lh-1 me-3">
+                  <a
+                    class="github-button"
+                    href="https://github.com/themeselection/sneat-html-admin-template-free"
+                    data-icon="octicon-star"
+                    data-size="large"
+                    data-show-count="true"
+                    aria-label="Star themeselection/sneat-html-admin-template-free on GitHub"
+                    >Slim Sassi</a
+                  >
+                </li>
+
+                <!-- User -->
+                <li class="nav-item navbar-dropdown dropdown-user dropdown">
+                  <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
+                    <div class="avatar avatar-online">
+                      <img src="{{asset('assets/back-office/img/slim.jpg')}}" alt class="w-px-30 h-auto rounded-circle" />
+                    </div>
+                  </a>
+                  <ul class="dropdown-menu dropdown-menu-end">
+                    <li>
+                      <a class="dropdown-item" href="#">
+                        <div class="d-flex">
+                          <div class="flex-shrink-0 me-3">
+                            <div class="avatar avatar-online">
+                              <img src="{{asset('assets/back-office/img/slim.jpg')}}" alt class="w-px-40 h-auto rounded-circle" />
+                            </div>
+                          </div>
+                          <div class="flex-grow-1">
+                            <span class="fw-semibold d-block">Slim Sassi</span>
+                            <small class="text-muted">Admin</small>
+                          </div>
+                        </div>
+                      </a>
+                    </li>
+                    <li>
+                      <div class="dropdown-divider"></div>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="{{ path('profile') }}">
+                        <i class="bx bx-user me-2"></i>
+                        <span class="align-middle">Mon Profile</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="{{ path('Setting1') }}">
+                        <i class="bx bx-cog me-2"></i>
+                        <span class="align-middle">Paramétres</span>
+                      </a>
+                    </li>
+                    <li>
+                      <div class="dropdown-divider"></div>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="{{ path('login') }}">
+                        <i class="bx bx-power-off me-2"></i>
+                        <span class="align-middle">Déconnecter</span>
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <!--/ User -->
+              </ul>
+            </div>
+          </nav>
+
+          <!-- / Navbar -->
+
+          <!-- Content wrapper -->
+          <div class="content-wrapper">
+            <!-- Content -->
+
+            <div class="container-xxl flex-grow-1 container-p-y">
+              <div class="row">
+                <div class="col-lg-8 mb-4 order-0">
+                  <div class="card">
+                    <div class="d-flex align-items-end row">
+                      <div class="col-sm-7">
+                        <div class="card-body">
+                          <h5 class="card-title text-primary">Administration  des Utilisateurs 👋🎉</h5>
+                          <p class="mb-4">
+                            Votre vision, notre donnée : ensemble, pilotons l'essentiel. 🚀"
+                          </p>
+
+                          <a href="javascript:;" class="btn btn-sm btn-outline-primary">View Badges</a>
+                        </div>
+                      </div>
+                      
+                      
+                      <div class="col-sm-5 text-center text-sm-left">
+                        <div class="card-body pb-0 px-0 px-md-4">
+                          <img
+                            src="{{asset('assets/back-office/img/illustrations/man-with-laptop-light.png')}}"
+                            height="140"
+                            alt="View Badge User"
+                            data-app-dark-img="illustrations/man-with-laptop-dark.png"
+                            data-app-light-img="illustrations/man-with-laptop-light.png"
+                          />
+                        </div>
+                      </div>
+
+                    </div>
+        
+                  </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-4 order-1">
+                
+                  <div class="row">
+                    <div class="col-lg-6 col-md-12 col-6 mb-4">
+                    
+                      <div class="card">
+                        <div class="card-body">
+                          <div class="card-title d-flex align-items-start justify-content-between">
+                            <div class="avatar flex-shrink-0">
+                              <img
+                                src="{{asset('assets/back-office/img/icons/unicons/chart-success.png')}}"
+                                alt="chart success"
+                                class="rounded"
+                              />
+                            </div>
+                            <div class="dropdown">
+                              <button
+                                class="btn p-0"
+                                type="button"
+                                id="cardOpt3"
+                                data-bs-toggle="dropdown"
+                                aria-haspopup="true"
+                                aria-expanded="false"
+                              >
+                                <i class="bx bx-dots-vertical-rounded"></i>
+                              </button>
+                              <div class="dropdown-menu dropdown-menu-end" aria-labelledby="cardOpt3">
+                                <a class="dropdown-item" href="javascript:void(0);">View More</a>
+                                <a class="dropdown-item" href="javascript:void(0);">Delete</a>
+                              </div>
+                            </div>
+                          </div>
+                          <span class="fw-semibold d-block mb-1">Compte Connecté</span>
+                          <h3 class="card-title mb-2">126</h3>
+                          <small class="text-success fw-semibold"><i class="bx bx-up-arrow-alt"></i> +72.80%</small>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-lg-6 col-md-12 col-6 mb-4">
+                      <div class="card">
+                        <div class="card-body">
+                          <div class="card-title d-flex align-items-start justify-content-between">
+                            <div class="avatar flex-shrink-0">
+                              <img
+                                src="{{asset('assets/back-office/img/icons/unicons/wallet-info.png')}}"
+                                alt="Credit Card"
+                                class="rounded"
+                              />
+                            </div>
+                            <div class="dropdown">
+                              <button
+                                class="btn p-0"
+                                type="button"
+                                id="cardOpt6"
+                                data-bs-toggle="dropdown"
+                                aria-haspopup="true"
+                                aria-expanded="false"
+                              >
+                                <i class="bx bx-dots-vertical-rounded"></i>
+                              </button>
+                              <div class="dropdown-menu dropdown-menu-end" aria-labelledby="cardOpt6">
+                                <a class="dropdown-item" href="javascript:void(0);">View More</a>
+                                <a class="dropdown-item" href="javascript:void(0);">Delete</a>
+                              </div>
+                            </div>
+                          </div>
+                          <span>Compte Desactivé dans les derniéres 24H</span>
+                          <h3 class="card-title text-nowrap mb-1">46</h3>
+                          <small class="text-success fw-semibold"><i class="bx bx-up-arrow-alt"></i> +28.42%</small>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Total Revenue -->
+                <div class="col-12 col-lg-12 order-2 order-md-3 order-lg-2 mb-4">
+                  <div class="card">
+                    <div class="row row-bordered g-0">
+                      <div class="col-md-8">
+                        <h5 class="card-header m-0 me-2 pb-3">Statistiques Des Comptes</h5>
+                        <div id="totalRevenueChart" class="px-2"></div>
+                      </div>
+                      <div class="col-md-4">
+                        <div class="card-body">
+                          <div class="text-center">
+                            <div class="dropdown">
+                              <button
+                                class="btn btn-sm btn-outline-primary dropdown-toggle"
+                                type="button"
+                                id="growthReportId"
+                                data-bs-toggle="dropdown"
+                                aria-haspopup="true"
+                                aria-expanded="false"
+                              >
+                                2024
+                              </button>
+                              <div class="dropdown-menu dropdown-menu-end" aria-labelledby="growthReportId">
+                                <a class="dropdown-item" href="javascript:void(0);">2024</a>
+                                <a class="dropdown-item" href="javascript:void(0);">2020</a>
+                                <a class="dropdown-item" href="javascript:void(0);">2019</a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div id="growthChart"></div>
+                        <div class="text-center fw-semibold pt-3 mb-2">62% Company Growth</div>
+
+                        <div class="d-flex px-xxl-4 px-lg-2 p-4 gap-xxl-3 gap-lg-1 gap-3 justify-content-between">
+                          <div class="d-flex">
+                            <div class="me-2">
+                              <span class="badge bg-label-primary p-2"><i class="bx bx-dollar text-primary"></i></span>
+                            </div>
+                            <div class="d-flex flex-column">
+                              <small>2022</small>
+                              <h6 class="mb-0">$32.5k</h6>
+                            </div>
+                          </div>
+                          <div class="d-flex">
+                            <div class="me-2">
+                              <span class="badge bg-label-info p-2"><i class="bx bx-wallet text-info"></i></span>
+                            </div>
+                            <div class="d-flex flex-column">
+                              <small>2024</small>
+                              <h6 class="mb-0">$41.2k</h6>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 col-lg-8 order-2 order-md-3 order-lg-2 mb-4">
+                  <div class="card">
+                 <h5 class="card-header">Liste Des Utilisateurs</h5>
+                 <div class="table-responsive text-nowrap">
+                  <table class="table">
+                    <thead>
+                      <tr>
+                        <th>Id</th>
+                        <th>Nom</th>
+                        <th>Role</th>
+                        <th>Photo</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                      </tr>
+                    </thead>
+                    <tbody class="table-border-bottom-0">
+                      <tr class="table-default">
+                        <td><i class="fab fa-sketch fa-lg text-warning me-3"></i> <strong>1</strong></td>
+                        <td>Sassi SLim</td>
+                        <td>Administrateur</td>
+                        <td>
+                          <ul class="list-unstyled users-list m-0 avatar-group d-flex align-items-center">
+                            <li
+                              data-bs-toggle="tooltip"
+                              data-popup="tooltip-custom"
+                              data-bs-placement="top"
+                              class="avatar avatar-xs pull-up"
+                              title="Slim Sassi"
+                            >
+                              <img src=" {{asset('assets/back-office/img/avatars/7.png')}}" alt="Avatar" class="rounded-circle" />
+                            </li>
+                          </ul>
+                        </td>
+                        <td><span class="badge bg-label-primary me-1">Active</span></td>
+                        <td>
+                          <div class="dropdown">
+                            <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
+                              <i class="bx bx-dots-vertical-rounded"></i>
+                            </button>
+                            <div class="dropdown-menu">
+                              <a class="dropdown-item" href="javascript:void(0);"
+                                ><i class="bx bx-edit-alt me-1"></i> Edit</a
+                              >
+                              <a class="dropdown-item" href="javascript:void(0);"
+                                ><i class="bx bx-trash me-1"></i> Delete</a
+                              >
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr class="table-active">
+                        <td><i class="fab fa-react fa-lg text-info me-3"></i> <strong>2</strong></td>
+                        <td>Safwen Haboubi</td>
+                        <td>Medecin</td>
+                        <td>
+                          <ul class="list-unstyled users-list m-0 avatar-group d-flex align-items-center">
+                            <li
+                              data-bs-toggle="tooltip"
+                              data-popup="tooltip-custom"
+                              data-bs-placement="top"
+                              class="avatar avatar-xs pull-up"
+                              title="safwen"
+                            >
+                              <img src="{{asset('assets/back-office/img/avatars/5.png')}}" alt="Avatar" class="rounded-circle" />
+                            </li>
+                          </ul>
+                        </td>
+                        <td><span class="badge bg-label-success me-1">Online</span></td>
+                        <td>
+                          <div class="dropdown">
+                            <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
+                              <i class="bx bx-dots-vertical-rounded"></i>
+                            </button>
+                            <div class="dropdown-menu">
+                              <a class="dropdown-item" href="javascript:void(0);"
+                                ><i class="bx bx-edit-alt me-1"></i> Edit</a
+                              >
+                              <a class="dropdown-item" href="javascript:void(0);"
+                                ><i class="bx bx-trash me-1"></i> Delete</a
+                              >
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr class="table-primary">
+                        <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>3</strong></td>
+                        <td>Fatma Bacha</td>
+                        <td>Infermiére</td>
+                        <td>
+                          <ul class="list-unstyled users-list m-0 avatar-group d-flex align-items-center">
+                            <li
+                              data-bs-toggle="tooltip"
+                              data-popup="tooltip-custom"
+                              data-bs-placement="top"
+                              class="avatar avatar-xs pull-up"
+                              title="Fatma Bacha"
+                            >
+                              <img src="{{asset('assets/back-office/img/avatars/6.png')}}" alt="Avatar" class="rounded-circle" />
+                            </li>
+                          </ul>
+                        </td>
+                        <td><span class="badge bg-label-primary me-1">Active</span></td>
+                        <td>
+                          <div class="dropdown">
+                            <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
+                              <i class="bx bx-dots-vertical-rounded"></i>
+                            </button>
+                            <div class="dropdown-menu">
+                              <a class="dropdown-item" href="javascript:void(0);"
+                                ><i class="bx bx-edit-alt me-1"></i> Edit</a
+                              >
+                              <a class="dropdown-item" href="javascript:void(0);"
+                                ><i class="bx bx-trash me-1"></i> Delete</a
+                              >
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr class="table-secondary">
+                        <td><i class="fab fa-vuejs fa-lg text-success me-3"></i> <strong>4</strong></td>
+                        <td>Mahdi Saoudi</td>
+                        <td>Chirurgien</td>
+                        <td>
+                          <ul class="list-unstyled users-list m-0 avatar-group d-flex align-items-center">
+                            <li
+                              data-bs-toggle="tooltip"
+                              data-popup="tooltip-custom"
+                              data-bs-placement="top"
+                              class="avatar avatar-xs pull-up"
+                              title="Mahdi Saoudi"
+                            >
+                              <img src="{{asset('assets/back-office/img/avatars/7.png')}}" alt="Avatar" class="rounded-circle" />
+                            </li>
+                          </ul>
+                        </td>
+                        <td><span class="badge bg-label-info me-1">Scheduled</span></td>
+                        <td>
+                          <div class="dropdown">
+                            <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
+                              <i class="bx bx-dots-vertical-rounded"></i>
+                            </button>
+                            <div class="dropdown-menu">
+                              <a class="dropdown-item" href="javascript:void(0);"
+                                ><i class="bx bx-edit-alt me-1"></i> Edit</a
+                              >
+                              <a class="dropdown-item" href="javascript:void(0);"
+                                ><i class="bx bx-trash me-1"></i> Delete</a
+                              >
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr class="table-success">
+                        <td>
+                          <i class="fab fa-bootstrap fa-lg text-primary me-3"></i> <strong>5</strong>
+                        </td>
+                        <td>Yasmine Aboudi</td>
+                        <td>Pédiatre</td>
+                        <td>
+                          <ul class="list-unstyled users-list m-0 avatar-group d-flex align-items-center">
+                            <li
+                              data-bs-toggle="tooltip"
+                              data-popup="tooltip-custom"
+                              data-bs-placement="top"
+                              class="avatar avatar-xs pull-up"
+                              title="Yasmine Aboudi"
+                            >
+                              <img src="{{asset('assets/back-office/img/avatars/7.png')}}" alt="Avatar" class="rounded-circle" />
+                            </li>
+                          </ul>
+                        </td>
+                        <td><span class="badge bg-label-warning me-1">Pending</span></td>
+                        <td>
+                          <div class="dropdown">
+                            <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
+                              <i class="bx bx-dots-vertical-rounded"></i>
+                            </button>
+                            <div class="dropdown-menu">
+                              <a class="dropdown-item" href="javascript:void(0);"
+                                ><i class="bx bx-edit-alt me-1"></i> Edit</a
+                              >
+                              <a class="dropdown-item" href="javascript:void(0);"
+                                ><i class="bx bx-trash me-1"></i> Delete</a
+                              >
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr class="table-dark">
+                        <td><i class="fab fa-bootstrap fa-lg text-primary me-3"></i> <strong>6</strong></td>
+                        <td>Jerry Milton</td>
+                        <td>Patient</td>
+                        <td>
+                          <ul class="list-unstyled users-list m-0 avatar-group d-flex align-items-center">
+                            <li
+                              data-bs-toggle="tooltip"
+                              data-popup="tooltip-custom"
+                              data-bs-placement="top"
+                              class="avatar avatar-xs pull-up"
+                              title="Chahine saadelaoui"
+                            >
+                              <img src="{{asset('assets/back-office/img/avatars/6.png')}}" alt="Avatar" class="rounded-circle" />
+                            </li>
+                          </ul>
+                        </td>
+                        <td><span class="badge bg-label-success me-1">Completed</span></td>
+                        <td>
+                          <div class="dropdown">
+                            <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
+                              <i class="bx bx-dots-vertical-rounded"></i>
+                            </button>
+                            <div class="dropdown-menu">
+                              <a class="dropdown-item" href="javascript:void(0);"
+                                ><i class="bx bx-edit-alt me-1"></i> Edit</a
+                              >
+                              <a class="dropdown-item" href="javascript:void(0);"
+                                ><i class="bx bx-trash me-1"></i> Delete</a
+                              >
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+                </div> 
+                <!--/ Total Revenue -->
+                <div class="col-12 col-md-8 col-lg-4 order-3 order-md-2">
+                  <div class="row">
+                    <div class="col-6 mb-4">
+                      <div class="card">
+                        <div class="card-body">
+                          <div class="card-title d-flex align-items-start justify-content-between">
+                            <div class="avatar flex-shrink-0">
+                              <img src="{{asset('assets/back-office/img/icons/unicons/paypal.png')}}" alt="Credit Card" class="rounded" />
+                            </div>
+                            <div class="dropdown">
+                              <button
+                                class="btn p-0"
+                                type="button"
+                                id="cardOpt4"
+                                data-bs-toggle="dropdown"
+                                aria-haspopup="true"
+                                aria-expanded="false"
+                              >
+                                <i class="bx bx-dots-vertical-rounded"></i>
+                              </button>
+                              <div class="dropdown-menu dropdown-menu-end" aria-labelledby="cardOpt4">
+                                <a class="dropdown-item" href="javascript:void(0);">View More</a>
+                                <a class="dropdown-item" href="javascript:void(0);">Delete</a>
+                              </div>
+                            </div>
+                          </div>
+                          <span class="d-block mb-1">Payments</span>
+                          <h3 class="card-title text-nowrap mb-2">$2,456</h3>
+                          <small class="text-danger fw-semibold"><i class="bx bx-down-arrow-alt"></i> -14.82%</small>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-6 mb-4">
+                      <div class="card">
+                        <div class="card-body">
+                          <div class="card-title d-flex align-items-start justify-content-between">
+                            <div class="avatar flex-shrink-0">
+                              <img src="{{asset('assets/back-office/img/icons/unicons/cc-primary.png')}}" alt="Credit Card" class="rounded" />
+                            </div>
+                            <div class="dropdown">
+                              <button
+                                class="btn p-0"
+                                type="button"
+                                id="cardOpt1"
+                                data-bs-toggle="dropdown"
+                                aria-haspopup="true"
+                                aria-expanded="false"
+                              >
+                                <i class="bx bx-dots-vertical-rounded"></i>
+                              </button>
+                              <div class="dropdown-menu" aria-labelledby="cardOpt1">
+                                <a class="dropdown-item" href="javascript:void(0);">View More</a>
+                                <a class="dropdown-item" href="javascript:void(0);">Delete</a>
+                              </div>
+                            </div>
+                          </div>
+                          <span class="fw-semibold d-block mb-1">Transactions</span>
+                          <h3 class="card-title mb-2">$14,857</h3>
+                          <small class="text-success fw-semibold"><i class="bx bx-up-arrow-alt"></i> +28.14%</small>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- </div> 
+                    <div class="row"> -->
+                    <div class="col-12 mb-4">
+                      <div class="card">
+                        <div class="card-body">
+                          <div class="d-flex justify-content-between flex-sm-row flex-column gap-3">
+                            <div class="d-flex flex-sm-column flex-row align-items-start justify-content-between">
+                              <div class="card-title">
+                                <h5 class="text-nowrap mb-2">Profile Report</h5>
+                                <span class="badge bg-label-warning rounded-pill">Year 2024</span>
+                              </div>
+                              <div class="mt-sm-auto">
+                                <small class="text-success text-nowrap fw-semibold"
+                                  ><i class="bx bx-chevron-up"></i> 68.2%</small
+                                >
+                                <h3 class="mb-0">$84,686k</h3>
+                              </div>
+                            </div>
+                            <div id="profileReportChart"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <!-- Order Statistics -->
+                <div class="col-md-6 col-lg-4 col-xl-4 order-0 mb-4">
+                  <div class="card h-100">
+                    <div class="card-header d-flex align-items-center justify-content-between pb-0">
+                      <div class="card-title mb-0">
+                        <h5 class="m-0 me-2">Order Statistics</h5>
+                        <small class="text-muted">42.82k Total Sales</small>
+                      </div>
+                      <div class="dropdown">
+                        <button
+                          class="btn p-0"
+                          type="button"
+                          id="orederStatistics"
+                          data-bs-toggle="dropdown"
+                          aria-haspopup="true"
+                          aria-expanded="false"
+                        >
+                          <i class="bx bx-dots-vertical-rounded"></i>
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="orederStatistics">
+                          <a class="dropdown-item" href="javascript:void(0);">Select All</a>
+                          <a class="dropdown-item" href="javascript:void(0);">Refresh</a>
+                          <a class="dropdown-item" href="javascript:void(0);">Share</a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card-body">
+                      <div class="d-flex justify-content-between align-items-center mb-3">
+                        <div class="d-flex flex-column align-items-center gap-1">
+                          <h2 class="mb-2">8,258</h2>
+                          <span>Total Orders</span>
+                        </div>
+                        <div id="orderStatisticsChart"></div>
+                      </div>
+                      <ul class="p-0 m-0">
+                        <li class="d-flex mb-4 pb-1">
+                          <div class="avatar flex-shrink-0 me-3">
+                            <span class="avatar-initial rounded bg-label-primary"
+                              ><i class="bx bx-mobile-alt"></i
+                            ></span>
+                          </div>
+                          <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                            <div class="me-2">
+                              <h6 class="mb-0">Electronic</h6>
+                              <small class="text-muted">Mobile, Earbuds, TV</small>
+                            </div>
+                            <div class="user-progress">
+                              <small class="fw-semibold">82.5k</small>
+                            </div>
+                          </div>
+                        </li>
+                        <li class="d-flex mb-4 pb-1">
+                          <div class="avatar flex-shrink-0 me-3">
+                            <span class="avatar-initial rounded bg-label-success"><i class="bx bx-closet"></i></span>
+                          </div>
+                          <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                            <div class="me-2">
+                              <h6 class="mb-0">Fashion</h6>
+                              <small class="text-muted">T-shirt, Jeans, Shoes</small>
+                            </div>
+                            <div class="user-progress">
+                              <small class="fw-semibold">23.8k</small>
+                            </div>
+                          </div>
+                        </li>
+                        <li class="d-flex mb-4 pb-1">
+                          <div class="avatar flex-shrink-0 me-3">
+                            <span class="avatar-initial rounded bg-label-info"><i class="bx bx-home-alt"></i></span>
+                          </div>
+                          <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                            <div class="me-2">
+                              <h6 class="mb-0">Decor</h6>
+                              <small class="text-muted">Fine Art, Dining</small>
+                            </div>
+                            <div class="user-progress">
+                              <small class="fw-semibold">849k</small>
+                            </div>
+                          </div>
+                        </li>
+                        <li class="d-flex">
+                          <div class="avatar flex-shrink-0 me-3">
+                            <span class="avatar-initial rounded bg-label-secondary"
+                              ><i class="bx bx-football"></i
+                            ></span>
+                          </div>
+                          <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                            <div class="me-2">
+                              <h6 class="mb-0">Sports</h6>
+                              <small class="text-muted">Football, Cricket Kit</small>
+                            </div>
+                            <div class="user-progress">
+                              <small class="fw-semibold">99</small>
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <!--/ Order Statistics -->
+
+                <!-- Expense Overview -->
+                <div class="col-md-6 col-lg-4 order-1 mb-4">
+                  <div class="card h-100">
+                    <div class="card-header">
+                      <ul class="nav nav-pills" role="tablist">
+                        <li class="nav-item">
+                          <button
+                            type="button"
+                            class="nav-link active"
+                            role="tab"
+                            data-bs-toggle="tab"
+                            data-bs-target="#navs-tabs-line-card-income"
+                            aria-controls="navs-tabs-line-card-income"
+                            aria-selected="true"
+                          >
+                            Income
+                          </button>
+                        </li>
+                        <li class="nav-item">
+                          <button type="button" class="nav-link" role="tab">Expenses</button>
+                        </li>
+                        <li class="nav-item">
+                          <button type="button" class="nav-link" role="tab">Profit</button>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="card-body px-0">
+                      <div class="tab-content p-0">
+                        <div class="tab-pane fade show active" id="navs-tabs-line-card-income" role="tabpanel">
+                          <div class="d-flex p-4 pt-3">
+                            <div class="avatar flex-shrink-0 me-3">
+                              <img src="{{asset('assets/back-office/img/icons/unicons/wallet.png')}}" alt="User" />
+                            </div>
+                            <div>
+                              <small class="text-muted d-block">Total Balance</small>
+                              <div class="d-flex align-items-center">
+                                <h6 class="mb-0 me-1">$459.10</h6>
+                                <small class="text-success fw-semibold">
+                                  <i class="bx bx-chevron-up"></i>
+                                  42.9%
+                                </small>
+                              </div>
+                            </div>
+                          </div>
+                          <div id="incomeChart"></div>
+                          <div class="d-flex justify-content-center pt-4 gap-2">
+                            <div class="flex-shrink-0">
+                              <div id="expensesOfWeek"></div>
+                            </div>
+                            <div>
+                              <p class="mb-n1 mt-1">Expenses This Week</p>
+                              <small class="text-muted">$39 less than last week</small>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!--/ Expense Overview -->
+
+                <!-- Transactions -->
+                <div class="col-md-6 col-lg-4 order-2 mb-4">
+                  <div class="card h-100">
+                    <div class="card-header d-flex align-items-center justify-content-between">
+                      <h5 class="card-title m-0 me-2">Transactions</h5>
+                      <div class="dropdown">
+                        <button
+                          class="btn p-0"
+                          type="button"
+                          id="transactionID"
+                          data-bs-toggle="dropdown"
+                          aria-haspopup="true"
+                          aria-expanded="false"
+                        >
+                          <i class="bx bx-dots-vertical-rounded"></i>
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="transactionID">
+                          <a class="dropdown-item" href="javascript:void(0);">Last 28 Days</a>
+                          <a class="dropdown-item" href="javascript:void(0);">Last Month</a>
+                          <a class="dropdown-item" href="javascript:void(0);">Last Year</a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card-body">
+                      <ul class="p-0 m-0">
+                        <li class="d-flex mb-4 pb-1">
+                          <div class="avatar flex-shrink-0 me-3">
+                            <img src="{{asset('assets/back-office/img/icons/unicons/paypal.png')}}" alt="User" class="rounded" />
+                          </div>
+                          <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                            <div class="me-2">
+                              <small class="text-muted d-block mb-1">Paypal</small>
+                              <h6 class="mb-0">Send money</h6>
+                            </div>
+                            <div class="user-progress d-flex align-items-center gap-1">
+                              <h6 class="mb-0">+82.6</h6>
+                              <span class="text-muted">USD</span>
+                            </div>
+                          </div>
+                        </li>
+                        <li class="d-flex mb-4 pb-1">
+                          <div class="avatar flex-shrink-0 me-3">
+                            <img src="{{asset('assets/back-office/img/icons/unicons/wallet.png')}}" alt="User" class="rounded" />
+                          </div>
+                          <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                            <div class="me-2">
+                              <small class="text-muted d-block mb-1">Wallet</small>
+                              <h6 class="mb-0">Mac'D</h6>
+                            </div>
+                            <div class="user-progress d-flex align-items-center gap-1">
+                              <h6 class="mb-0">+270.69</h6>
+                              <span class="text-muted">USD</span>
+                            </div>
+                          </div>
+                        </li>
+                        <li class="d-flex mb-4 pb-1">
+                          <div class="avatar flex-shrink-0 me-3">
+                            <img src="{{asset('assets/back-office/img/icons/unicons/chart.png')}}" alt="User" class="rounded" />
+                          </div>
+                          <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                            <div class="me-2">
+                              <small class="text-muted d-block mb-1">Transfer</small>
+                              <h6 class="mb-0">Refund</h6>
+                            </div>
+                            <div class="user-progress d-flex align-items-center gap-1">
+                              <h6 class="mb-0">+637.91</h6>
+                              <span class="text-muted">USD</span>
+                            </div>
+                          </div>
+                        </li>
+                        <li class="d-flex mb-4 pb-1">
+                          <div class="avatar flex-shrink-0 me-3">
+                            <img src="{{asset('assets/back-office/img/icons/unicons/cc-success.png')}}" alt="User" class="rounded" />
+                          </div>
+                          <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                            <div class="me-2">
+                              <small class="text-muted d-block mb-1">Credit Card</small>
+                              <h6 class="mb-0">Ordered Food</h6>
+                            </div>
+                            <div class="user-progress d-flex align-items-center gap-1">
+                              <h6 class="mb-0">-838.71</h6>
+                              <span class="text-muted">USD</span>
+                            </div>
+                          </div>
+                        </li>
+                        <li class="d-flex mb-4 pb-1">
+                          <div class="avatar flex-shrink-0 me-3">
+                            <img src="{{asset('assets/back-office/img/icons/unicons/wallet.png')}}" alt="User" class="rounded" />
+                          </div>
+                          <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                            <div class="me-2">
+                              <small class="text-muted d-block mb-1">Wallet</small>
+                              <h6 class="mb-0">Starbucks</h6>
+                            </div>
+                            <div class="user-progress d-flex align-items-center gap-1">
+                              <h6 class="mb-0">+203.33</h6>
+                              <span class="text-muted">USD</span>
+                            </div>
+                          </div>
+                        </li>
+                        <li class="d-flex">
+                          <div class="avatar flex-shrink-0 me-3">
+                            <img src="{{asset('assets/back-office/img/icons/unicons/cc-warning.png')}}" alt="User" class="rounded" />
+                          </div>
+                          <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                            <div class="me-2">
+                              <small class="text-muted d-block mb-1">Mastercard</small>
+                              <h6 class="mb-0">Ordered Food</h6>
+                            </div>
+                            <div class="user-progress d-flex align-items-center gap-1">
+                              <h6 class="mb-0">-92.45</h6>
+                              <span class="text-muted">USD</span>
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <!--/ Transactions -->
+              </div>
+            </div>
+            <!-- / Content -->
+
+            <!-- Footer -->
+            <footer class="content-footer footer bg-footer-theme">
+              <div class="container-xxl d-flex flex-wrap justify-content-between py-2 flex-md-row flex-column">
+                <div class="mb-2 mb-md-0">
+                  ©
+                  <script>
+                    document.write(new Date().getFullYear());
+                  </script>
+                  , made with ❤️ by
+                  <a href="https://themeselection.com" target="_blank" class="footer-link fw-bolder">HospiConnect</a>
+                </div>
+                <div>
+                  <a href="https://themeselection.com/license/" class="footer-link me-4" target="_blank">License</a>
+                  <a href="https://themeselection.com/" target="_blank" class="footer-link me-4">More Themes</a>
+
+                  <a
+                    href="https://themeselection.com/demo/sneat-bootstrap-html-admin-template/documentation/"
+                    target="_blank"
+                    class="footer-link me-4"
+                    >Documentation</a
+                  >
+
+                  <a
+                    href="https://github.com/themeselection/sneat-html-admin-template-free/issues"
+                    target="_blank"
+                    class="footer-link me-4"
+                    >Support</a
+                  >
+                </div>
+              </div>
+            </footer>
+            
+            {% endblock %}
+

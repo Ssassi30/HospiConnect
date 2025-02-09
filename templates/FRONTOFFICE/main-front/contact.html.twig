@@ -1,0 +1,139 @@
+{% extends 'FRONTOFFICE/base.html.twig' %}
+
+{%block body %}
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top p-0 wow fadeIn" data-wow-delay="0.1s">
+        <a href="{{ path('front') }}" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+            <h1 class="m-0 text-primary"><img src="{{ asset('assets/back-office/img/Logo.png') }}" alt style="width: 95px; height: auto;" class="rounded-circle" />
+</i>HospiConnect</h1>
+        </a>
+        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto p-4 p-lg-0">
+                <a href="{{ path('front') }}" class="nav-item nav-link">Acceuil</a>
+                <a href="{{ path('apropos') }}" class="nav-item nav-link">A propos</a>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Service</a>
+                    <div class="dropdown-menu rounded-0 rounded-bottom m-0">
+                        <a href="feature.html" class="dropdown-item">Dons</a>
+                        <a href="team.html" class="dropdown-item">Laboratoire</a>
+                        <a href="appointment.html" class="dropdown-item">Consultation</a>
+                        <a href="testimonial.html" class="dropdown-item">Urgence</a>
+                    </div>
+                </div>
+                <a href="{{ path('contact') }}" class="nav-item nav-link active">Contact</a>
+            </div>
+            <a href="{{ path('signin') }}" class="btn btn-primary rounded-0 py-4 px-lg-5 d-none d-lg-block">Créer Votre compte<i class="fa fa-arrow-right ms-3"></i></a>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+
+    <!-- Page Header Start -->
+    <div class="container-fluid page-header py-5 mb-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <h1 class="display-3 text-white mb-3 animated slideInDown">Contactez nous</h1>
+            <nav aria-label="breadcrumb animated slideInDown">
+                <ol class="breadcrumb text-uppercase mb-0">
+                    <li class="breadcrumb-item"><a class="text-white" href="#"></a></li>
+                    <li class="breadcrumb-item"><a class="text-white" href="#">Pages</a></li>
+                    <li class="breadcrumb-item text-primary active" aria-current="page">Contact</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+    <!-- Page Header End -->
+
+
+    <!-- Contact Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <div class="h-100 bg-light rounded d-flex align-items-center p-5">
+                        <div class="d-flex flex-shrink-0 align-items-center justify-content-center rounded-circle bg-white" style="width: 55px; height: 55px;">
+                            <i class="fa fa-map-marker-alt text-primary"></i>
+                        </div>
+                        <div class="ms-4">
+                            <p class="mb-2">Addresse</p>
+                            <h5 class="mb-0">Ariana Soghra,Ariana,tunisie</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="h-100 bg-light rounded d-flex align-items-center p-5">
+                        <div class="d-flex flex-shrink-0 align-items-center justify-content-center rounded-circle bg-white" style="width: 55px; height: 55px;">
+                            <i class="fa fa-phone-alt text-primary"></i>
+                        </div>
+                        <div class="ms-4">
+                            <p class="mb-2">Appelez nous</p>
+                            <h5 class="mb-0">+216 71 001 002</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="h-100 bg-light rounded d-flex align-items-center p-5">
+                        <div class="d-flex flex-shrink-0 align-items-center justify-content-center rounded-circle bg-white" style="width: 55px; height: 55px;">
+                            <i class="fa fa-envelope-open text-primary"></i>
+                        </div>
+                        <div class="ms-4">
+                            <p class="mb-2">Envoyez nous un email</p>
+                            <h5 class="mb-0">info@hospiconnect.com</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
+                    <div class="bg-light rounded p-5">
+                        <p class="d-inline-block border rounded-pill py-1 px-4">Contactez nous</p>
+                        <h1 class="mb-4">Une question ? N’hésitez pas à nous contacter !</h1>
+                        
+                        <form>
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="name" placeholder="Votre nom">
+                                        <label for="name">Votre nom</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <input type="email" class="form-control" id="email" placeholder="Votre Email">
+                                        <label for="email">Votre Email</label>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="subject" placeholder="Sujet">
+                                        <label for="subject">Sujet</label>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-floating">
+                                        <textarea class="form-control" placeholder="Leave a message here" id="message" style="height: 100px"></textarea>
+                                        <label for="message">Message</label>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <button class="btn btn-primary w-100 py-3" type="submit">Envoyez le Message</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
+                    <div class="h-100" style="min-height: 400px;">
+                        <iframe class="rounded w-100 h-100"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d82889.40282523623!2d10.126949229899758!3d36.86653600357309!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12e2cb8903e6dbf9%3A0x56d7863e1281dceb!2sAriana%2C%20Tunisie!5e0!3m2!1sfr!2stn!4v1707389423456!5m2!1sfr!2stn"
+                        frameborder="0" allowfullscreen="" aria-hidden="false"
+                        tabindex="0"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Contact End -->
+
+
+ 
+{% endblock %}

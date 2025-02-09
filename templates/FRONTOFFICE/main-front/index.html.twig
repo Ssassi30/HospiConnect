@@ -1,0 +1,372 @@
+{% extends 'FRONTOFFICE/base.html.twig' %}
+
+{%block body %}
+
+<!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top p-0 wow fadeIn" data-wow-delay="0.1s">
+        <a href="{{ path('front') }}" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+            <h1 class="m-0 text-primary"><img src="{{ asset('assets/back-office/img/Logo.png') }}" alt style="width: 95px; height: auto;" class="rounded-circle" />
+</i>HospiConnect</h1>
+        </a>
+        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto p-4 p-lg-0">
+                <a href="{{ path('front') }}" class="nav-item nav-link active">Acceuil</a>
+                <a href="{{ path('apropos') }}" class="nav-item nav-link">A propos</a>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Service</a>
+                    <div class="dropdown-menu rounded-0 rounded-bottom m-0">
+                        <a href="feature.html" class="dropdown-item">Dons</a>
+                        <a href="team.html" class="dropdown-item">Laboratoire</a>
+                        <a href="appointment.html" class="dropdown-item">Consultation</a>
+                        <a href="testimonial.html" class="dropdown-item">Urgence</a>
+                    </div>
+                </div>
+                <a href="{{ path('contact') }}" class="nav-item nav-link">Contact</a>
+            </div>
+            <a href="{{ path('signin') }}" class="btn btn-primary rounded-0 py-4 px-lg-5 d-none d-lg-block">Créer Votre compte<i class="fa fa-arrow-right ms-3"></i></a>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+
+    <!-- Header Start -->
+    <div class="container-fluid header bg-primary p-0 mb-5">
+        <div class="row g-0 align-items-center flex-column-reverse flex-lg-row">
+            <div class="col-lg-6 p-5 wow fadeIn" data-wow-delay="0.1s">
+                <h1 class="display-4 text-white mb-5">Une bonne santé est la racine de tout bonheur</h1>
+                <div class="row g-4">
+                    <div class="col-sm-4">
+                        <div class="border-start border-light ps-4">
+                            <h2 class="text-white mb-1" data-toggle="counter-up">123</h2>
+                            <p class="text-light mb-0">Médecins experts</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="border-start border-light ps-4">
+                            <h2 class="text-white mb-1" data-toggle="counter-up">1234</h2>
+                            <p class="text-light mb-0">Matériel médical</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="border-start border-light ps-4">
+                            <h2 class="text-white mb-1" data-toggle="counter-up">12345</h2>
+                            <p class="text-light mb-0">Nombre total de patients</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
+                <div class="owl-carousel header-carousel">
+                    <div class="owl-carousel-item position-relative">
+                        <img class="img-fluid" src="{{asset('assets/front-office/img/carousel-1.jpg')}}" alt="">
+                        <div class="owl-carousel-text">
+                            <h1 class="display-1 text-white mb-0">Cardiologie</h1>
+                        </div>
+                    </div>
+                    <div class="owl-carousel-item position-relative">
+                        <img class="img-fluid" src="{{asset('assets/front-office/img/carousel-2.jpg')}}" alt="">
+                        <div class="owl-carousel-text">
+                            <h1 class="display-1 text-white mb-0">Neurologie</h1>
+                        </div>
+                    </div>
+                    <div class="owl-carousel-item position-relative">
+                        <img class="img-fluid" src="{{asset('assets/front-office/img/carousel-3.jpg')}}" alt="">
+                        <div class="owl-carousel-text">
+                            <h1 class="display-1 text-white mb-0">Pulmonary</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Header End -->
+
+
+    <!-- About Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
+                    <div class="d-flex flex-column">
+                        <img class="img-fluid rounded w-75 align-self-end" src="{{asset('assets/front-office/img/about-1.jpg')}}" alt="">
+                        <img class="img-fluid rounded w-50 bg-white pt-3 pe-3" src="{{asset('assets/front-office/img/about-2.jpg')}}" alt="" style="margin-top: -25%;">
+                    </div>
+                </div>
+                <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
+                    <p class="d-inline-block border rounded-pill py-1 px-4">À propos de nous</p>
+                    <h1 class="mb-4">Pourquoi nous faire confiance ? Apprenez à nous connaître</h1>
+                    <p>Notre clinique s’engage à offrir des soins de qualité, alliant expertise médicale, technologies de pointe et approche humaine. Nous mettons tout en œuvre pour assurer le bien-être et la sécurité de nos patients, avec une équipe dédiée et un service adapté à chaque besoin.</p>
+                    <p class="mb-4">Fondée sur des valeurs d’excellence, d’éthique et de compassion, notre clinique place le patient au cœur de ses préoccupations. Grâce à une gestion efficace, un personnel qualifié et une infrastructure moderne, nous garantissons une prise en charge optimale et une expérience de soins en toute sérénité.</p>
+                    <p><i class="far fa-check-circle text-primary me-3"></i>Des soins de santé de qualité</p>
+                    <p><i class="far fa-check-circle text-primary me-3"></i>Uniquement des médecins qualifiés</p>
+                    <p><i class="far fa-check-circle text-primary me-3"></i>Professionnels de la recherche médicale</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About End -->
+
+
+    <!-- Service Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+                <p class="d-inline-block border rounded-pill py-1 px-4">Services</p>
+                <h1>Solutions de soins de santé</h1>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="service-item bg-light rounded h-100 p-5">
+                        <div class="d-inline-flex align-items-center justify-content-center bg-white rounded-circle mb-4" style="width: 65px; height: 65px;">
+                            <i class="fa fa-heartbeat text-primary fs-4"></i>
+                        </div>
+                        <h4 class="mb-3">Dons et financement </h4>
+                        <p class="mb-4">Mise en place de systèmes pour faciliter les dons, afin de soutenir les projets de santé, améliorer les infrastructures ou financer des soins pour les patients.</p>
+                        <a class="btn" href=""><i class="fa fa-plus text-primary me-3"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="service-item bg-light rounded h-100 p-5">
+                        <div class="d-inline-flex align-items-center justify-content-center bg-white rounded-circle mb-4" style="width: 65px; height: 65px;">
+                            <i class="fa fa-x-ray text-primary fs-4"></i>
+                        </div>
+                        <h4 class="mb-3">Gestion des urgences</h4>
+                        <p class="mb-4">Une prise en charge rapide et efficace des situations d'urgence, avec une équipe dédiée, des équipements modernes et des protocoles adaptés pour chaque type d'urgence.</p>
+                        <a class="btn" href=""><i class="fa fa-plus text-primary me-3"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="service-item bg-light rounded h-100 p-5">
+                        <div class="d-inline-flex align-items-center justify-content-center bg-white rounded-circle mb-4" style="width: 65px; height: 65px;">
+                            <i class="fa fa-brain text-primary fs-4"></i>
+                        </div>
+                        <h4 class="mb-3">Consultations à distance (téléconsultations) </h4>
+                        <p class="mb-4">Des consultations médicales à distance permettant aux patients d'obtenir des avis médicaux sans se déplacer, tout en respectant la confidentialité.</p>
+                        <a class="btn" href=""><i class="fa fa-plus text-primary me-3"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="service-item bg-light rounded h-100 p-5">
+                        <div class="d-inline-flex align-items-center justify-content-center bg-white rounded-circle mb-4" style="width: 65px; height: 65px;">
+                            <i class="fa fa-wheelchair text-primary fs-4"></i>
+                        </div>
+                        <h4 class="mb-3">Soins spécialisés (chirurgie, oncologie, etc.) </h4>
+                        <p class="mb-4">Des services médicaux spécialisés offrant des soins avancés dans divers domaines de la santé, assurés par des professionnels expérimentés.</p>
+                        <a class="btn" href=""><i class="fa fa-plus text-primary me-3"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="service-item bg-light rounded h-100 p-5">
+                        <div class="d-inline-flex align-items-center justify-content-center bg-white rounded-circle mb-4" style="width: 65px; height: 65px;">
+                            <i class="fa fa-tooth text-primary fs-4"></i>
+                        </div>
+                        <h4 class="mb-3">Pharmacie </h4>
+                        <p class="mb-4"> Un service pharmaceutique qui garantit l'accès aux médicaments prescrits, des conseils sur l'utilisation des médicaments, et un suivi personnalisé pour assurer l'efficacité et la sécurité des traitements.</p>
+                        <a class="btn" href=""><i class="fa fa-plus text-primary me-3"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="service-item bg-light rounded h-100 p-5">
+                        <div class="d-inline-flex align-items-center justify-content-center bg-white rounded-circle mb-4" style="width: 65px; height: 65px;">
+                            <i class="fa fa-vials text-primary fs-4"></i>
+                        </div>
+                        <h4 class="mb-3">Laboratoires médicaux </h4>
+                        <p class="mb-4">Des services de diagnostic de haute qualité, incluant des analyses de sang, des tests biologiques et des examens spécialisés pour aider à un diagnostic précis.</p>
+                        <a class="btn" href=""><i class="fa fa-plus text-primary me-3"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Service End -->
+
+
+    <!-- Feature Start -->
+    <div class="container-fluid bg-primary overflow-hidden my-5 px-lg-0">
+        <div class="container feature px-lg-0">
+            <div class="row g-0 mx-lg-0">
+                <div class="col-lg-6 feature-text py-5 wow fadeIn" data-wow-delay="0.1s">
+                    <div class="p-lg-5 ps-lg-0">
+                        <p class="d-inline-block border rounded-pill text-light py-1 px-4">Fonctionnalités</p>
+                        <h1 class="text-white mb-4">Pourquoi nous choisir ?</h1>
+                        <p class="text-white mb-4 pb-2">Nous vous offrons des soins de qualité, alliant expertise médicale et technologies modernes. Notre équipe dédiée est là pour vous garantir une prise en charge rapide et personnalisée, tout en vous apportant un soutien constant et humain.</p>
+                        <div class="row g-4">
+                            <div class="col-6">
+                                <div class="d-flex align-items-center">
+                                    <div class="d-flex flex-shrink-0 align-items-center justify-content-center rounded-circle bg-light" style="width: 55px; height: 55px;">
+                                        <i class="fa fa-user-md text-primary"></i>
+                                    </div>
+                                    <div class="ms-4">
+                                        <p class="text-white mb-2">Expérience</p>
+                                        <h5 class="text-white mb-0">Médecins</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="d-flex align-items-center">
+                                    <div class="d-flex flex-shrink-0 align-items-center justify-content-center rounded-circle bg-light" style="width: 55px; height: 55px;">
+                                        <i class="fa fa-check text-primary"></i>
+                                    </div>
+                                    <div class="ms-4">
+                                        <p class="text-white mb-2">Qualité</p>
+                                        <h5 class="text-white mb-0">Services</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="d-flex align-items-center">
+                                    <div class="d-flex flex-shrink-0 align-items-center justify-content-center rounded-circle bg-light" style="width: 55px; height: 55px;">
+                                        <i class="fa fa-comment-medical text-primary"></i>
+                                    </div>
+                                    <div class="ms-4">
+                                        <p class="text-white mb-2">Consultation</p>
+                                        <h5 class="text-white mb-0">positive</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="d-flex align-items-center">
+                                    <div class="d-flex flex-shrink-0 align-items-center justify-content-center rounded-circle bg-light" style="width: 55px; height: 55px;">
+                                        <i class="fa fa-headphones text-primary"></i>
+                                    </div>
+                                    <div class="ms-4">
+                                        <p class="text-white mb-2">Support</p>
+                                        <h5 class="text-white mb-0">24 heures</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 pe-lg-0 wow fadeIn" data-wow-delay="0.5s" style="min-height: 400px;">
+                    <div class="position-relative h-100">
+                        <img class="position-absolute img-fluid w-100 h-100" src="{{asset('assets/front-office/img/feature.jpg')}}" style="object-fit: cover;" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Feature End -->
+
+
+    
+    <!-- Appointment Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <p class="d-inline-block border rounded-pill py-1 px-4">Rendez-vous</p>
+                    <h1 class="mb-4">Prenez rendez-vous pour consulter notre médecin</h1>
+                    <p class="mb-4">Prenez rendez-vous pour consulter notre médecin. Nous sommes à votre disposition pour vous offrir une prise en charge rapide et efficace. Vous pouvez facilement réserver votre consultation et être assuré d'un service de qualité</p>
+                    <div class="bg-light rounded d-flex align-items-center p-5 mb-4">
+                        <div class="d-flex flex-shrink-0 align-items-center justify-content-center rounded-circle bg-white" style="width: 55px; height: 55px;">
+                            <i class="fa fa-phone-alt text-primary"></i>
+                        </div>
+                        <div class="ms-4">
+                            <p class="mb-2">Appelez-nous maintenant</p>
+                            <h5 class="mb-0">+216 71 001 002</h5>
+                        </div>
+                    </div>
+                    <div class="bg-light rounded d-flex align-items-center p-5">
+                        <div class="d-flex flex-shrink-0 align-items-center justify-content-center rounded-circle bg-white" style="width: 55px; height: 55px;">
+                            <i class="fa fa-envelope-open text-primary"></i>
+                        </div>
+                        <div class="ms-4">
+                            <p class="mb-2">Envoyez-nous un e-mail maintenant</p>
+                            <h5 class="mb-0">info@HospiConnect.com</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="bg-light rounded h-100 d-flex align-items-center p-5">
+                        <form>
+                            <div class="row g-3">
+                                <div class="col-12 col-sm-6">
+                                    <input type="text" class="form-control border-0" placeholder="Votre Nom" style="height: 55px;">
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <input type="email" class="form-control border-0" placeholder="Votre Prénom" style="height: 55px;">
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <input type="text" class="form-control border-0" placeholder="Votre numéro de téléphone" style="height: 55px;">
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <select class="form-select border-0" style="height: 55px;">
+                                        <option selected>Choisissez un docteur</option>
+                                        <option value="1">Fatma Bacha</option>
+                                        <option value="2">Slim Sassi</option>
+                                        <option value="3"> Yasmine Aboudi</option>
+                                    </select>
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <div class="date" id="date" data-target-input="nearest">
+                                        <input type="text"
+                                            class="form-control border-0 datetimepicker-input"
+                                            placeholder="Choisissez une date" data-target="#date" data-toggle="datetimepicker" style="height: 55px;">
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <div class="time" id="time" data-target-input="nearest">
+                                        <input type="text"
+                                            class="form-control border-0 datetimepicker-input"
+                                            placeholder="Choisissez une date" data-target="#time" data-toggle="datetimepicker" style="height: 55px;">
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <textarea class="form-control border-0" rows="5" placeholder="Descrivez votre problème"></textarea>
+                                </div>
+                                <div class="col-12">
+                                    <button class="btn btn-primary w-100 py-3" type="submit">Prenez Rendez-vous</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Appointment End -->
+
+
+    <!-- Testimonial Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+                <p class="d-inline-block border rounded-pill py-1 px-4">Témoignages</p>
+                <h1>Ce que disent nos patients !</h1>
+            </div>
+            <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.1s">
+                <div class="testimonial-item text-center">
+                    <img class="img-fluid bg-light rounded-circle p-2 mx-auto mb-4" src="{{asset('assets/front-office/img/testimonial-1.jpg')}}" style="width: 100px; height: 100px;">
+                    <div class="testimonial-text rounded text-center p-4">
+                        <p>Le site web est très intuitif et m'a permis de prendre rendez-vous en quelques clics. Un vrai gain de temps !</p>
+                        <h5 class="mb-1">Sarah M. </h5>
+                        <span class="fst-italic">Enseignante</span>
+                    </div>
+                </div>
+                <div class="testimonial-item text-center">
+                    <img class="img-fluid bg-light rounded-circle p-2 mx-auto mb-4" src="{{asset('assets/front-office/img/testimonial-2.jpg')}}" style="width: 100px; height: 100px;">
+                    <div class="testimonial-text rounded text-center p-4">
+                        <p>Grâce au site, j'ai pu consulter toutes les informations nécessaires avant ma visite. Très clair et facile à utiliser.</p>
+                        <h5 class="mb-1">Karim D.</h5>
+                        <span class="fst-italic">Entrepreneur</span>
+                    </div>
+                </div>
+                <div class="testimonial-item text-center">
+                    <img class="img-fluid bg-light rounded-circle p-2 mx-auto mb-4" src="{{asset('assets/front-office/img/testimonial-3.jpg')}}" style="width: 100px; height: 100px;">
+                    <div class="testimonial-text rounded text-center p-4">
+                        <p>J'apprécie la possibilité de poser des questions en ligne et d'obtenir rapidement une réponse. Un excellent service digital !</p>
+                        <h5 class="mb-1">Emma L.</h5>
+                        <span class="fst-italic">Étudiante</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Testimonial End -->
+
+
+    
+{% endblock %}
