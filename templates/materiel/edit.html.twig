@@ -1,0 +1,83 @@
+{% extends '/BACKOFFICE/base.html.twig' %}
+
+
+{% block title %}Modifier un Matériel{% endblock %}
+
+{% block body %}
+  <div class="container-xxl flex-grow-1 container-p-y">
+    <h4 class="fw-bold py-3 mb-4">
+      <span class="text-muted fw-light">Matériels /</span> Modifier
+    </h4>
+
+    <div class="card">
+      <div class="card-body">
+        {{ form_start(form) }}
+          <!-- Champ ID Matériel -->
+          <div class="row mb-3">
+            <label class="col-sm-2 col-form-label">{{ form_label(form.id_materiel) }}</label>
+            <div class="col-sm-10">
+              {{ form_widget(form.id_materiel, {'attr': {'class': 'form-control', 'placeholder': 'ID Matériel'}}) }}
+            </div>
+          </div>
+
+          <!-- Champ Nom -->
+          <div class="row mb-3">
+            <label class="col-sm-2 col-form-label">{{ form_label(form.nom) }}</label>
+            <div class="col-sm-10">
+              {{ form_widget(form.nom, {'attr': {'class': 'form-control', 'placeholder': 'Nom du matériel'}}) }}
+            </div>
+          </div>
+
+          <!-- Champ Catégorie -->
+          <div class="row mb-3">
+            <label class="col-sm-2 col-form-label">{{ form_label(form.categorie) }}</label>
+            <div class="col-sm-10">
+              {{ form_widget(form.categorie, {'attr': {'class': 'form-control'}}) }}
+            </div>
+          </div>
+
+          <!-- Champ État -->
+          <div class="row mb-3">
+            <label class="col-sm-2 col-form-label">{{ form_label(form.etat) }}</label>
+            <div class="col-sm-10">
+              {{ form_widget(form.etat, {'attr': {'class': 'form-control'}}) }}
+            </div>
+          </div>
+
+          <!-- Champ Quantité -->
+          <div class="row mb-3">
+            <label class="col-sm-2 col-form-label">{{ form_label(form.quantite) }}</label>
+            <div class="col-sm-10">
+              {{ form_widget(form.quantite, {'attr': {'class': 'form-control', 'placeholder': 'Quantité'}}) }}
+            </div>
+          </div>
+
+          <!-- Champ Emplacement -->
+          <div class="row mb-3">
+            <label class="col-sm-2 col-form-label">{{ form_label(form.emplacement) }}</label>
+            <div class="col-sm-10">
+              {{ form_widget(form.emplacement, {'attr': {'class': 'form-control', 'placeholder': 'Emplacement'}}) }}
+            </div>
+          </div>
+
+          <!-- Champ Date d'ajout -->
+          <div class="row mb-3">
+            <label class="col-sm-2 col-form-label">{{ form_label(form.date_ajout) }}</label>
+            <div class="col-sm-10">
+              {{ form_widget(form.date_ajout, {'attr': {'class': 'form-control', 'type': 'date'}}) }}
+            </div>
+          </div>
+
+          <!-- Bouton Enregistrer -->
+          <div class="row justify-content-end">
+            <div class="col-sm-10">
+              <button type="submit" class="btn btn-primary">
+                <i class="bx bx-save"></i> Enregistrer
+              </button>
+            </div>
+          </div>
+        {{ form_end(form) }}
+      </div>
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,70 @@
+{% extends '/BACKOFFICE/base.html.twig' %}
+
+
+{% block title %}Liste des Matériels{% endblock %}
+
+{% block body %}
+  <div class="container-xxl flex-grow-1 container-p-y">
+    <h4 class="fw-bold py-3 mb-4">
+      <span class="text-muted fw-light">Matériels /</span> Liste
+    </h4>
+
+    <!-- Bouton d'ajout -->
+    <a href="{{ path('app_materiel_new') }}" class="btn btn-primary mb-3">
+      <i class="bx bx-plus"></i> Ajouter un Matériel
+    </a>
+
+    <!-- Tableau des matériels -->
+    <div class="card">
+      <div class="card-body">
+        <div class="table-responsive">
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th>ID Matériel</th>
+                <th>Nom</th>
+                <th>Catégorie</th>
+                <th>État</th>
+                <th>Quantité</th>
+                <th>Emplacement</th>
+                <th>Date d'ajout</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for materiel in materiels %}
+                <tr>
+                  <td>{{ materiel.idMateriel }}</td>
+                  <td>{{ materiel.nom }}</td>
+                  <td>{{ materiel.categorie }}</td>
+                  <td>{{ materiel.etat }}</td>
+                  <td>{{ materiel.quantite }}</td>
+                  <td>{{ materiel.emplacement }}</td>
+                  <td>{{ materiel.dateAjout ? materiel.dateAjout|date('d/m/Y') : 'N/A' }}</td>
+                  <td>
+                    <a href="{{ path('app_materiel_show', {'id': materiel.id}) }}" class="btn btn-info btn-sm">
+                      <i class="bx bx-show"></i> Détails
+                    </a>
+                    <a href="{{ path('app_materiel_edit', {'id': materiel.id}) }}" class="btn btn-warning btn-sm">
+                      <i class="bx bx-edit"></i> Modifier
+                    </a>
+                    <form method="post" action="{{ path('app_materiel_delete', {'id': materiel.id}) }}" style="display:inline;" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer ce matériel ?');">
+                      <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ materiel.id) }}">
+                      <button type="submit" class="btn btn-danger btn-sm">
+                        <i class="bx bx-trash"></i> Supprimer
+                      </button>
+                    </form>
+                  </td>
+                </tr>
+              {% else %}
+                <tr>
+                  <td colspan="8" class="text-center">Aucun matériel trouvé.</td>
+                </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

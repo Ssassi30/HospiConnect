@@ -1,0 +1,41 @@
+
+{% extends '/BACKOFFICE/base.html.twig' %}
+
+
+
+
+
+{% block title %}Détails du Matériel et Mouvements de Stock{% endblock %}
+
+{% block body %}
+    <h2>Mouvements de Stock Associés</h2>
+
+    {% if mouvementsStocks  is not empty %}
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ID Mouvement</th>
+                    <th>typeMouvement</th>
+                    <th>Quantité</th>
+                    <th>Date</th>
+                    <th>Motif</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for mouvement in mouvementsStocks  %}
+                <tr>
+                    <td>{{ mouvement.IdMouvement }}</td>
+                    <td>{{ mouvement.typeMouvement }}</td>
+                    <td>{{ mouvement.Qunatite }}</td>
+                    <td>{{ mouvement.DateMouvement|date('Y-m-d') }}</td>
+                    <td>{{ mouvement.Motif }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>Aucun mouvement de stock trouvé pour ce matériel.</p>
+    {% endif %}
+
+    <a href="{{ path('app_mouvement_stock_new') }}" class="btn btn-secondary">ajouter mouvement_stock</a>
+{% endblock %}

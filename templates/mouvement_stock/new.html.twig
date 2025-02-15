@@ -1,0 +1,84 @@
+{% extends '/BACKOFFICE/base.html.twig' %}
+
+{% block title %}Créer un Nouveau Mouvement de Stock{% endblock %}
+
+{% block body %}
+  <div class="container-xxl flex-grow-1 container-p-y">
+    <h4 class="fw-bold py-3 mb-4">
+      <span class="text-muted fw-light">Mouvements de Stock /</span> Créer
+    </h4>
+
+    <div class="card">
+      <div class="card-body">
+        {{ form_start(form) }}
+          <!-- Champ ID Mouvement -->
+          <div class="row mb-3">
+            <label class="col-sm-2 col-form-label">{{ form_label(form.id_mouvement) }}</label>
+            <div class="col-sm-10">
+              {{ form_widget(form.id_mouvement, {'attr': {'class': 'form-control', 'placeholder': 'ID Mouvement'}}) }}
+            </div>
+          </div>
+
+          <!-- Champ Matériel -->
+          <div class="row mb-3">
+            <label class="col-sm-2 col-form-label">{{ form_label(form.id_materiel) }}</label>
+            <div class="col-sm-10">
+              {{ form_widget(form.id_materiel, {'attr': {'class': 'form-control'}}) }}
+            </div>
+          </div>
+
+          <!-- Champ Personnel -->
+          <div class="row mb-3">
+            <label class="col-sm-2 col-form-label">{{ form_label(form.id_personnel) }}</label>
+            <div class="col-sm-10">
+              {{ form_widget(form.id_personnel, {'attr': {'class': 'form-control'}}) }}
+            </div>
+          </div>
+          <!-- Champ Type de Mouvement -->
+          <div class="row mb-3">
+              <label class="col-sm-2 col-form-label">{{ form_label(form.typeMouvement) }}</label>
+              <div class="col-sm-10">
+                  {{ form_widget(form.typeMouvement, {'attr': {'class': 'form-control'}}) }}
+              </div>
+          </div>
+
+          <!-- Champ Quantité -->
+            <div class="row mb-3">
+                <label class="col-sm-2 col-form-label">{{ form_label(form.qunatite) }}</label> {# Utilisez 'qunatite' #}
+                <div class="col-sm-10">
+                    {{ form_widget(form.qunatite, {'attr': {'class': 'form-control', 'placeholder': 'Quantité'}}) }} {# Utilisez 'qunatite' #}
+                </div>
+            </div>
+
+          <!-- Champ Date du Mouvement -->
+          <div class="row mb-3">
+            <label class="col-sm-2 col-form-label">{{ form_label(form.date_mouvement) }}</label>
+            <div class="col-sm-10">
+              {{ form_widget(form.date_mouvement, {'attr': {'class': 'form-control', 'type': 'date'}}) }}
+            </div>
+          </div>
+
+          <!-- Champ Motif -->
+          <div class="row mb-3">
+            <label class="col-sm-2 col-form-label">{{ form_label(form.motif) }}</label>
+            <div class="col-sm-10">
+              {{ form_widget(form.motif, {'attr': {'class': 'form-control', 'placeholder': 'Motif'}}) }}
+            </div>
+          </div>
+
+          <!-- Bouton Enregistrer -->
+          <div class="row justify-content-end">
+            <div class="col-sm-10">
+              <button type="submit" class="btn btn-primary">
+                <i class="bx bx-save"></i> Enregistrer
+              </button>
+              <a href="{{ path('app_mouvement_stock_index') }}" class="btn btn-secondary">
+                <i class="bx bx-arrow-back"></i> Retour à la liste
+              </a>
+            </div>
+          </div>
+        {{ form_end(form) }}
+      </div>
+    </div>
+  </div>
+{% endblock %}

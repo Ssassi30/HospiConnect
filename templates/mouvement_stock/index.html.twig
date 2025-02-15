@@ -1,0 +1,85 @@
+{% extends '/BACKOFFICE/base.html.twig' %}
+
+{# templates/mouvement_stock/index.html.twig #}
+
+
+
+{% block title %}Liste des Mouvements de Stock{% endblock %}
+
+{% block body %}
+    <style>
+    .type-entree {
+        color: green;
+        font-weight: bold;
+    }
+
+    .type-sortie {
+        color: red;
+        font-weight: bold;
+    }
+
+    .type-reparation {
+        color: orange;
+        font-weight: bold;
+    }
+</style>
+
+    <h1>Liste des Mouvements de Stock</h1>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Matériel</th>
+                <th>Personnel</th>
+                <th>typeMouvement</th>
+                <th>Quantité</th>
+                <th>Date</th>
+                <th>Motif</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for mouvement_stock in mouvements_stocks %}
+            <tr>
+                <td>{{ mouvement_stock.id }}</td>
+                <td>{{ mouvement_stock.idMateriel.nom }}</td>
+                <td>{{ mouvement_stock.idPersonnel.nom }}</td>
+                <td>
+                    <span class="
+                        {% if mouvement_stock.typeMouvement == 'Entrée' %}
+                            type-entree
+                        {% elseif mouvement_stock.typeMouvement == 'Sortie' %}
+                            type-sortie
+                        {% elseif mouvement_stock.typeMouvement == 'Reparation' %}
+                            type-reparation
+                        {% endif %}
+                    ">
+                        {{ mouvement_stock.typeMouvement }}
+                    </span>
+                </td>
+                <td>{{ mouvement_stock.qunatite }}</td>
+                <td>{{ mouvement_stock.dateMouvement|date('Y-m-d') }}</td>
+                <td>{{ mouvement_stock.motif }}</td>
+                <td>
+                    
+                    <a href="{{ path('app_mouvement_stock_edit', {'id': mouvement_stock.id}) }}" class="btn btn-warning btn-sm">Modifier</a>
+                     <form method="post" action="{{ path('app_mouvement_stock_delete', {'id':  mouvement_stock.id}) }}" style="display:inline;" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer ce matériel ?');">
+                      <input type="hidden" name="_token" value="{{ csrf_token('delete' ~  mouvement_stock.id) }}">
+                      <button type="submit" class="btn btn-danger btn-sm">
+                        <i class="bx bx-trash"></i> Supprimer
+                      </button>
+                    </form>
+                   
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7">Aucun mouvement de stock trouvé</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_mouvement_stock_new') }}" class="btn btn-success">Créer un Nouveau Mouvement</a>
+{% endblock %}

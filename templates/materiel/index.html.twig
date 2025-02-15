@@ -1,0 +1,284 @@
+
+{% extends '/BACKOFFICE/base.html.twig' %}
+
+
+{% block body %}
+  <h1>{{ title }}</h1>
+  
+ <!-- Layout wrapper -->
+    <div class="layout-wrapper layout-content-navbar">
+      <div class="layout-container">
+        <!-- Menu -->
+
+        <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
+          <div class="app-brand demo">
+            <a href="index.html" class="app-brand-link">
+              <span class="app-brand-logo demo">
+              <img src="{{asset('assets/back-office/img/Logo.png')}}" alt class="w-px-30 h-auto rounded-circle" />
+              </span>
+              <span class="app{% extends '/BACKOFFICE/base.html.twig' %}-brand-text demo menu-text fw-bolder ms-2">HospiConnect</span>
+            </a>
+
+            <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none">
+              <i class="bx bx-chevron-left bx-sm align-middle"></i>
+            </a>
+          </div>
+
+          <div class="menu-inner-shadow"></div>
+
+          <ul class="menu-inner py-1">
+            <!-- Dashboard -->
+            <li class="menu-item active">
+              <a href="{{ path('back') }}" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-home-circle"></i>
+                <div data-i18n="Analytics">Tableau de bord</div>
+              </a>
+            </li>
+
+            <!-- Layouts -->
+            <li class="menu-item">
+
+              <ul class="menu-sub">
+                <li class="menu-item">
+                  <a href="layouts-without-menu.html" class="menu-link">
+                    <div data-i18n="Without menu">Without menu</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="layouts-without-navbar.html" class="menu-link">
+                    <div data-i18n="Without navbar">Without navbar</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="layouts-container.html" class="menu-link">
+                    <div data-i18n="Container">Container</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="layouts-fluid.html" class="menu-link">
+                    <div data-i18n="Fluid">Fluid</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="layouts-blank.html" class="menu-link">
+                    <div data-i18n="Blank">Blank</div>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="menu-item">
+              <ul class="menu-sub">
+                <li class="menu-item">
+                  <a href="pages-account-settings-account.html" class="menu-link">
+                    <div data-i18n="Account">Account</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="pages-account-settings-notifications.html" class="menu-link">
+                    <div data-i18n="Notifications">Notifications</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="pages-account-settings-connections.html" class="menu-link">
+                    <div data-i18n="Connections">Connections</div>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="menu-item">
+              <ul class="menu-sub">
+                <li class="menu-item">
+                  <a href="{{ path('login') }}" class="menu-link" target="_blank">
+                    <div data-i18n="Basic">Login</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="{{ path('login') }}" class="menu-link" target="_blank">
+                    <div data-i18n="Basic">Register</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="{{ path('FP') }}" class="menu-link" target="_blank">
+                    <div data-i18n="Basic">Forgot Password</div>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <!-- Components -->
+            <li class="menu-header small text-uppercase"><span class="menu-header-text"><strong>administration</strong></span></li>
+            <!-- Cards -->
+            <li class="menu-item">
+            <a href="{{ path('user') }}" class="menu-link">
+                 <img src="{{asset('assets/back-office/img/user-regular-24.png')}}" alt class="w-px-30 h-auto rounded-circle" />
+                <div data-i18n="Analytics"><strong>Utilisateurs</strong></div>
+              </a>
+            </li>
+            <!-- User interface -->
+            <li class="menu-item">
+              <a href="{{ path('app_materiel_new') }}" class="menu-link">
+                 <img src="{{asset('assets/back-office/img/first-aid-regular-24.png')}}" alt class="w-px-30 h-auto rounded-circle" />
+                <div data-i18n="Analytics"><strong>Matériel et Stock</strong></div>
+              </a>
+            </li>
+
+            <!-- Extended components -->
+            <li class="menu-item">
+            <a href="{{ path('back') }}" class="menu-link">
+                 <img src="{{asset('assets/back-office/img/clinic-regular-24.png')}}" alt class="w-px-30 h-auto rounded-circle" />
+                <div data-i18n="Extended UI"><strong>Consultation</strong></div>
+              </a>
+            </li>
+
+            <li class="menu-item">
+              <a href="{{ path('back') }}" class="menu-link">
+                <img src="{{asset('assets/back-office/img/donate-blood-regular-24.png')}}" alt class="w-px-30 h-auto rounded-circle" />
+                <div data-i18n="Dons"><strong>Dons</strong></div>
+              </a>
+            </li>
+
+            <li class="menu-item">
+              <a href="{{ path('back') }}" class="menu-link">
+                <img src="{{asset('assets/back-office/img/band-aid-regular-24.png')}}" alt class="w-px-30 h-auto rounded-circle" />
+                <div data-i18n="Opération"><strong>Opération</strong></div>
+              </a>
+            </li>
+
+
+            <li class="menu-item">
+              <a href="{{ path('back') }}" class="menu-link">
+                <img src="{{asset('assets/back-office/img/test-tube-regular-24.png')}}" alt class="w-px-30 h-auto rounded-circle" />
+                <div data-i18n="Laboratoire"><strong>Laboratoire</strong></div>
+              </a>
+            </li>
+
+            <!-- Forms & Tables -->
+            <li class="menu-header small text-uppercase"><span class="menu-header-text"><strong>Support &amp Assistance</strong> </span></li>
+            <!-- Forms -->
+            <li class="menu-item">
+              <a href="javascript:void(0);" class="menu-link menu-toggle">
+                <i class="menu-icon tf-icons bx bx-detail"></i>
+                <div data-i18n="Envoyer un email"><strong>Envoyer un email</strong></div>
+              </a>
+            </li>
+
+            <!--  Signaler un problème -->
+            <li class="menu-item">
+              <a href=" Signaler un problème-basic.html" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-table"></i>
+                <div data-i18n=" Signaler un problème"><strong>Signaler un problème</strong></div>
+              </a>
+            </li>
+            <!-- Misc -->
+          </ul>
+        </aside>
+        <!-- / Menu -->
+
+
+
+
+
+
+
+
+  <div class="row">
+    <div class="col-xxl">
+      <div class="card mb-4">
+        <div class="card-header d-flex align-items-center justify-content-between">
+          <h5 class="mb-0">Gestion Matériel</h5>
+          <small class="text-muted float-end">Ajout / Modification</small>
+        </div>
+        <div class="card-body">
+          {{ form_start(form) }} {# Début du formulaire Symfony #}
+
+          <!-- ID Matériel -->
+          <div class="row mb-3">
+            <label class="col-sm-2 col-form-label">{{ form_label(form.id_materiel) }}</label>
+            <div class="col-sm-10">
+              <div class="input-group input-group-merge">
+                <span class="input-group-text"><i class="bx bx-barcode"></i></span>
+                {{ form_widget(form.id_materiel, {'attr': {'class': 'form-control', 'placeholder': 'ID Matériel'}}) }}
+              </div>
+            </div>
+          </div>
+
+          <!-- Nom -->
+          <div class="row mb-3">
+            <label class="col-sm-2 col-form-label">{{ form_label(form.nom) }}</label>
+            <div class="col-sm-10">
+              <div class="input-group input-group-merge">
+                <span class="input-group-text"><i class="bx bx-label"></i></span>
+                {{ form_widget(form.nom, {'attr': {'class': 'form-control', 'placeholder': 'Nom du matériel'}}) }}
+              </div>
+            </div>
+          </div>
+
+          <!-- Catégorie -->
+          <div class="row mb-3">
+            <label class="col-sm-2 col-form-label">{{ form_label(form.categorie) }}</label>
+            <div class="col-sm-10">
+              <div class="input-group input-group-merge">
+                <span class="input-group-text"><i class="bx bx-category"></i></span>
+                {{ form_widget(form.categorie, {'attr': {'class': 'form-control'}}) }}
+              </div>
+            </div>
+          </div>
+
+          <!-- État -->
+          <div class="row mb-3">
+            <label class="col-sm-2 col-form-label">{{ form_label(form.etat) }}</label>
+            <div class="col-sm-10">
+              <div class="input-group input-group-merge">
+                <span class="input-group-text"><i class="bx bx-check-circle"></i></span>
+                {{ form_widget(form.etat, {'attr': {'class': 'form-control'}}) }}
+              </div>
+            </div>
+          </div>
+
+          <!-- Quantité -->
+          <div class="row mb-3">
+            <label class="col-sm-2 col-form-label">{{ form_label(form.quantite) }}</label>
+            <div class="col-sm-10">
+              <div class="input-group input-group-merge">
+                <span class="input-group-text"><i class="bx bx-box"></i></span>
+                {{ form_widget(form.quantite, {'attr': {'class': 'form-control', 'placeholder': 'Quantité'}}) }}
+              </div>
+            </div>
+          </div>
+
+          <!-- Emplacement -->
+          <div class="row mb-3">
+            <label class="col-sm-2 col-form-label">{{ form_label(form.emplacement) }}</label>
+            <div class="col-sm-10">
+              <div class="input-group input-group-merge">
+                <span class="input-group-text"><i class="bx bx-map"></i></span>
+                {{ form_widget(form.emplacement, {'attr': {'class': 'form-control', 'placeholder': 'Emplacement'}}) }}
+              </div>
+            </div>
+          </div>
+
+          <!-- Date d'ajout -->
+          <div class="row mb-3">
+            <label class="col-sm-2 col-form-label">{{ form_label(form.date_ajout) }}</label>
+            <div class="col-sm-10">
+              <div class="input-group input-group-merge">
+                <span class="input-group-text"><i class="bx bx-calendar"></i></span>
+                {{ form_widget(form.date_ajout, {'attr': {'class': 'form-control', 'type': 'date'}}) }}
+              </div>
+            </div>
+          </div>
+
+          <!-- Bouton Submit -->
+          <div class="row justify-content-end">
+            <div class="col-sm-10">
+              <button type="submit" class="btn btn-primary">
+                <i class="bx bx-send"></i> Envoyer
+              </button>
+            </div>
+          </div>
+
+          {{ form_end(form) }} {# Fin du formulaire Symfony #}
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
