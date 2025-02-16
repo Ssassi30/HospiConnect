@@ -19,11 +19,11 @@ class MouvementsStock
 
     #[ORM\ManyToOne(inversedBy: 'mouvementsStocks')]
     #[ORM\JoinColumn(nullable: false)]
-    private ?materiel $id_materiel = null;
+    private ?Materiel $id_materiel = null;
 
     #[ORM\ManyToOne(inversedBy: 'mouvementsStocks')]
     #[ORM\JoinColumn(nullable: false)]
-    private ?user $id_personnel = null;
+    private ?User $id_personnel = null;
 
     #[ORM\Column]
     private ?int $qunatite = null;

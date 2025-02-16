@@ -7,6 +7,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: UserRepository::class)]
 #[ORM\Table(name: '`user`')]
@@ -17,32 +18,78 @@ class User
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\Column(length: 50)]
+    #[ORM\Column(length: 50, nullable: true)]
+    #[Assert\NotBlank(message: "Le nom est obligatoire.")]
+    #[Assert\Length(min: 3, max: 50, minMessage: "Le nom doit comporter au moins 3 caractères.", maxMessage: "Le nom ne doit pas dépasser 50 caractères.")]
     private ?string $nom = null;
 
-    #[ORM\Column(length: 50)]
+    #[ORM\Column(length: 50, nullable: true)]
+    #[Assert\NotBlank(message: "Le prénom est obligatoire.")]
     private ?string $prenom = null;
 
-    #[ORM\Column(type: Types::DATE_MUTABLE)]
-    private ?\DateTimeInterface $date_n = null;
+    #[ORM\Column(type: Types::DATE_MUTABLE, nullable: true)]
+    private ?\DateTimeInterface $dateN = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(length: 255, nullable: true)]
+    #[Assert\NotBlank(message: "L'email est obligatoire.")]
+    #[Assert\Email(message: "L'email {{ value }} n'est pas valide.")]
     private ?string $email = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(length: 255, nullable: true)]
+    #[Assert\NotBlank]
     private ?string $mdp = null;
 
     #[ORM\Column(type: Types::DATE_MUTABLE)]
+    #[Assert\NotBlank]
     private ?\DateTimeInterface $date_c = null;
 
-    #[ORM\Column(length: 20)]
+    #[ORM\Column(length: 20, nullable: true)]
+    #[Assert\NotBlank]
     private ?string $statut_compte = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(length: 255, nullable: true)]
+    #[Assert\NotBlank]
     private ?string $empreinte = null;
 
-    #[ORM\Column(length: 30)]
+    #[ORM\Column(length: 30, nullable: true)]
+    #[Assert\NotBlank]
     private ?string $role = null;
+
+    #[ORM\Column(type: 'time', nullable: true)]
+    #[Assert\NotBlank]
+    private ?\DateTime $inactivite = null;
+
+    #[ORM\Column(type: 'string', length: 10, nullable: true)]
+    private ?string $groupeSanguin = null;
+
+    #[ORM\Column(length: 9, nullable: true)]
+    #[Assert\NotBlank]
+    private ?string $tel = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $adresse = null;
+
+    #[ORM\Column(length: 10, nullable: true)]
+    private ?string $zipcode = null;
+
+
+    #[ORM\Column(length: 20, nullable: true)]
+    private ?string $gouvernorat = null;
+
+    #[ORM\Column(length: 10, nullable: true)]
+    private ?string $sexe = null;
+
+    #[ORM\Column(type: "decimal", precision: 10, scale: 3, nullable: true)]
+    private ?float $poids = null;
+
+    #[ORM\Column(type: "decimal", precision: 10, scale: 3, nullable: true)]
+    private ?float $taille = null;
+
+    #[ORM\Column(type: "decimal", precision: 10, scale: 3, nullable: true)]
+    private ?float $imc = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $img = null;
 
     /**
      * @var Collection<int, Dons>
@@ -108,6 +155,88 @@ class User
         $this->consultations = new ArrayCollection();
     }
 
+
+
+    public function getImc(): ?string
+    {
+        return $this->imc;
+    }
+
+    public function setImc(?string $imc): self
+    {
+        $this->imc = $imc;
+        return $this;
+    }
+
+    public function getImg(): ?string
+    {
+        return $this->img;
+    }
+
+    public function setImg(?string $img): self
+    {
+        $this->img = $img;
+        return $this;
+    }
+
+
+    public function gettaille(): ?string
+    {
+        return $this->taille;
+    }
+
+
+
+    public function settaille(?string $taille): self
+    {
+        $this->taille = $taille;
+        return $this;
+    }
+
+    public function getpoids(): ?string
+    {
+        return $this->poids;
+    }
+
+    public function setpoids(?string $poids): self
+    {
+        $this->poids = $poids;
+        return $this;
+    }
+    public function getsexe(): ?string
+    {
+        return $this->sexe;
+    }
+
+    public function setsexe(?string $sexe): self
+    {
+        $this->sexe = $sexe;
+        return $this;
+    }
+
+    public function getgouvernorat(): ?string
+    {
+        return $this->gouvernorat;
+    }
+
+    public function setgouvernorat(?string $gouvernorat): self
+    {
+        $this->gouvernorat = $gouvernorat;
+        return $this;
+    }
+
+    public function getGroupeSanguin(): ?string
+    {
+        return $this->groupeSanguin;
+    }
+
+    // ✅ Setter (si nécessaire)
+    public function setGroupeSanguin(?string $groupeSanguin): self
+    {
+        $this->groupeSanguin = $groupeSanguin;
+        return $this;
+    }
+
     public function getId(): ?int
     {
         return $this->id;
@@ -116,7 +245,6 @@ class User
     public function setId(int $id): static
     {
         $this->id = $id;
-
         return $this;
     }
 
@@ -131,6 +259,59 @@ class User
 
         return $this;
     }
+    public function getzipcode(): ?string
+    {
+        return $this->zipcode;
+    }
+
+    public function setzipcode(string $zipcode): static
+    {
+        $this->zipcode = $zipcode;
+
+        return $this;
+    }
+
+    public function getAdresse(): ?string
+    {
+        return $this->adresse;
+    }
+
+    public function setAdresse(string $adresse): static
+    {
+        $this->adresse = $adresse;
+
+        return $this;
+    }
+
+    public function gettel(): ?string
+    {
+        return $this->tel;
+    }
+
+
+    public function seTtel(string $tel): static
+    {
+        $this->tel = $tel;
+
+        return $this;
+    }
+
+    public function getinactivite(): ?string
+    {
+        if ($this->inactivite instanceof \DateTime) {
+            return $this->inactivite->format('Y-m-d H:i:s');  // Ou tout autre format de date
+        }
+
+        return null;  // ou une valeur par défaut si inactivite est null
+    }
+
+    public function setInactivite(\DateTime $inactivite): static
+    {
+        $this->inactivite = $inactivite;
+
+        return $this;
+    }
+
 
     public function getPrenom(): ?string
     {
@@ -144,26 +325,39 @@ class User
         return $this;
     }
 
-    public function getDateN(): ?\DateTimeInterface
+    public function getDateN(): ?string
     {
-        return $this->date_n;
+        return $this->date_c ? $this->date_c->format('Y-m-d') : null;
     }
 
-    public function setDateN(\DateTimeInterface $date_n): static
+    // ✅ Setter pour dateN (si besoin)
+    public function setDateN(?\DateTimeInterface $dateN): self
     {
-        $this->date_n = $date_n;
-
+        $this->dateN = $dateN;
         return $this;
     }
 
-    public function getEmail(): ?string
+    public function getEmail(): string
     {
         return $this->email;
     }
 
+
     public function setEmail(string $email): static
     {
         $this->email = $email;
+
+        return $this;
+    }
+
+    public function getstatut_compte(): ?string
+    {
+        return $this->statut_compte;
+    }
+
+    public function setstatut_compte(string $statut_compte): static
+    {
+        $this->statut_compte = $statut_compte;
 
         return $this;
     }
@@ -252,13 +446,13 @@ class User
 
     public function getRole(): ?string
     {
-    return $this->role;
+        return $this->role;
     }
 
     public function setRole(string $role): static
     {
-    $this->role = $role;
-    return $this;
+        $this->role = $role;
+        return $this;
     }
 
     /**

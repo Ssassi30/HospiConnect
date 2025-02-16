@@ -30,7 +30,7 @@ class Dons
 
     #[ORM\ManyToOne(inversedBy: 'dons')]
     #[ORM\JoinColumn(nullable: false)]
-    private ?user $donateur_id = null;
+    private ?User $donateur_id = null;
 
     #[ORM\Column(type: Types::DATE_MUTABLE)]
     private ?\DateTimeInterface $date_don = null;

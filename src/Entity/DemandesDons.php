@@ -19,7 +19,7 @@ class DemandesDons
 
     #[ORM\ManyToOne(inversedBy: 'demandesDons')]
     #[ORM\JoinColumn(nullable: false)]
-    private ?user $patient_id = null;
+    private ?User $patient_id = null;
 
     #[ORM\Column(length: 255)]
     private ?string $type_besoin = null;

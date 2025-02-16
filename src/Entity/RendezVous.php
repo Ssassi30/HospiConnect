@@ -19,14 +19,14 @@ class RendezVous
 
     #[ORM\ManyToOne]
     #[ORM\JoinColumn(nullable: false)]
-    private ?salle $id_patient = null;
+    private ?Salle $id_patient = null;
 
     #[ORM\Column]
     private ?int $id_medecin = null;
 
     #[ORM\ManyToOne]
     #[ORM\JoinColumn(nullable: false)]
-    private ?salle $id_salle = null;
+    private ?Salle $id_salle = null;
 
     #[ORM\Column(type: Types::DATE_MUTABLE)]
     private ?\DateTimeInterface $date_rendezvous = null;

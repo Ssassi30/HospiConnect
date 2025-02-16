@@ -25,11 +25,11 @@ class RendezVousAnalyse
 
     #[ORM\ManyToOne(inversedBy: 'rendezVousAnalyses')]
     #[ORM\JoinColumn(nullable: false)]
-    private ?disponibiliteanalyse $disponibilite = null;
+    private ?DisponibiliteAnalyse $disponibilite = null;
 
     #[ORM\ManyToOne(inversedBy: 'rendezVousAnalyses')]
     #[ORM\JoinColumn(nullable: false)]
-    private ?user $patient = null;
+    private ?User $patient = null;
 
     #[ORM\OneToOne(mappedBy: 'rdv', cascade: ['persist', 'remove'])]
     private ?Analyse $analyse = null;
@@ -75,12 +75,12 @@ class RendezVousAnalyse
         return $this;
     }
 
-    public function getDisponibilite(): ?disponibiliteanalyse
+    public function getDisponibilite(): ?disponibiliteAnalyse
     {
         return $this->disponibilite;
     }
 
-    public function setDisponibilite(?disponibiliteanalyse $disponibilite): static
+    public function setDisponibilite(?disponibiliteAnalyse $disponibilite): static
     {
         $this->disponibilite = $disponibilite;
 

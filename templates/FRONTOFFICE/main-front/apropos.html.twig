@@ -1,219 +1,249 @@
 {% extends 'FRONTOFFICE/base.html.twig' %}
 {% block body %}
-<!-- Navbar Start -->
-    <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top p-0 wow fadeIn" data-wow-delay="0.1s">
-        <a href="{{ path('front') }}" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
-            <h1 class="m-0 text-primary"><img src="{{ asset('assets/back-office/img/Logo.png') }}" alt style="width: 95px; height: auto;" class="rounded-circle" />
-</i>HospiConnect</h1>
-        </a>
-        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-            <div class="navbar-nav ms-auto p-4 p-lg-0">
-                <a href="{{ path('front') }}" class="nav-item nav-link">Acceuil</a>
-                <a href="{{ path('apropos') }}" class="nav-item nav-link active">A propos</a>
-                <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Service</a>
-                    <div class="dropdown-menu rounded-0 rounded-bottom m-0">
-                        <a href="feature.html" class="dropdown-item">Dons</a>
-                        <a href="team.html" class="dropdown-item">Laboratoire</a>
-                        <a href="appointment.html" class="dropdown-item">Consultation</a>
-                        <a href="testimonial.html" class="dropdown-item">Urgence</a>
-                    </div>
-                </div>
-                <a href="{{ path('contact') }}" class="nav-item nav-link">Contact</a>
-            </div>
-            <a href="{{ path('signin') }}" class="btn btn-primary rounded-0 py-4 px-lg-5 d-none d-lg-block">Créer Votre compte<i class="fa fa-arrow-right ms-3"></i></a>
-        </div>
-    </nav>
-    <!-- Navbar End -->
+	<!-- Navbar Start -->
+	<nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top p-0 wow fadeIn" data-wow-delay="0.1s">
+		<a href="{{ path('front') }}" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+			<h1 class="m-0 text-primary"><img src="{{ asset('assets/back-office/img/Logo.png') }}" alt style="width: 95px; height: auto;" class="rounded-circle"/>
+			</i>HospiConnect</h1>
+	</a>
+	<button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="collapse navbar-collapse" id="navbarCollapse">
+		<div class="navbar-nav ms-auto p-4 p-lg-0">
+			<a href="{{ path('front') }}" class="nav-item nav-link">Acceuil</a>
+			<a href="{{ path('apropos') }}" class="nav-item nav-link active">A propos</a>
+			<div class="nav-item dropdown">
+				<a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Service</a>
+				<div class="dropdown-menu rounded-0 rounded-bottom m-0">
+					<a href="feature.html" class="dropdown-item">Dons</a>
+					<a href="team.html" class="dropdown-item">Laboratoire</a>
+					<a href="appointment.html" class="dropdown-item">Consultation</a>
+					<a href="testimonial.html" class="dropdown-item">Urgence</a>
+				</div>
+			</div>
+			<a href="{{ path('contact') }}" class="nav-item nav-link">Contact</a>
+		</div>
+		<a href="{{ path('signin') }}" class="btn btn-primary rounded-0 py-4 px-lg-5 d-none d-lg-block">Créer Votre compte<i class="fa fa-arrow-right ms-3"></i>
+		</a>
+	</div>
+</nav>
+<!-- Navbar End -->
 
 
-    <!-- Page Header Start -->
-    <div class="container-fluid page-header py-5 mb-5 wow fadeIn" data-wow-delay="0.1s">
-        <div class="container py-5">
-            <h1 class="display-3 text-white mb-3 animated slideInDown">A propos</h1>
-            <nav aria-label="breadcrumb animated slideInDown">
-                <ol class="breadcrumb text-uppercase mb-0">
-                    <li class="breadcrumb-item"><a class="text-white" href="#">Acceuil</a></li>
-                    <li class="breadcrumb-item"><a class="text-white" href="#">Pages</a></li>
-                    <li class="breadcrumb-item text-primary active" aria-current="page">A propos</li>
-                </ol>
-            </nav>
-        </div>
-    </div>
-    <!-- Page Header End -->
+<!-- Page Header Start -->
+<div class="container-fluid page-header py-5 mb-5 wow fadeIn" data-wow-delay="0.1s">
+	<div class="container py-5">
+		<h1 class="display-3 text-white mb-3 animated slideInDown">A propos</h1>
+		<nav aria-label="breadcrumb animated slideInDown">
+			<ol class="breadcrumb text-uppercase mb-0">
+				<li class="breadcrumb-item">
+					<a class="text-white" href="#">Acceuil</a>
+				</li>
+				<li class="breadcrumb-item">
+					<a class="text-white" href="#">Pages</a>
+				</li>
+				<li class="breadcrumb-item text-primary active" aria-current="page">A propos</li>
+			</ol>
+		</nav>
+	</div>
+</div>
+<!-- Page Header End -->
 
 
-    <!-- About Start -->
-    <div class="container-xxl py-5">
-        <div class="container">
-            <div class="row g-5">
-                <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
-                    <div class="d-flex flex-column">
-                        <img class="img-fluid rounded w-75 align-self-end" src="{{ asset('assets/front-office/img/about-1.jpg') }}" alt="">
-                        <img class="img-fluid rounded w-50 bg-white pt-3 pe-3" src="{{ asset('assets/front-office/img/about-2.jpg') }}" alt="" style="margin-top: -25%;">
-                    </div>
-                </div>
-                <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
-                    <p class="d-inline-block border rounded-pill py-1 px-4">À propos de nous</p>
-                    <h1 class="mb-4">Pourquoi nous faire confiance ? Apprenez à nous connaître</h1>
-                    <p>Notre clinique s’engage à offrir des soins de qualité, alliant expertise médicale, technologies de pointe et approche humaine. Nous mettons tout en œuvre pour assurer le bien-être et la sécurité de nos patients, avec une équipe dédiée et un service adapté à chaque besoin.</p>
-                    <p class="mb-4">Fondée sur des valeurs d’excellence, d’éthique et de compassion, notre clinique place le patient au cœur de ses préoccupations. Grâce à une gestion efficace, un personnel qualifié et une infrastructure moderne, nous garantissons une prise en charge optimale et une expérience de soins en toute sérénité.</p>
-                    <p><i class="far fa-check-circle text-primary me-3"></i>Des soins de santé de qualité</p>
-                    <p><i class="far fa-check-circle text-primary me-3"></i>Uniquement des médecins qualifiés</p>
-                    <p><i class="far fa-check-circle text-primary me-3"></i>Professionnels de la recherche médicale</p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- About End -->
+<!-- About Start -->
+<div class="container-xxl py-5">
+	<div class="container">
+		<div class="row g-5">
+			<div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
+				<div class="d-flex flex-column">
+					<img class="img-fluid rounded w-75 align-self-end" src="{{ asset('assets/front-office/img/about-1.jpg') }}" alt="">
+					<img class="img-fluid rounded w-50 bg-white pt-3 pe-3" src="{{ asset('assets/front-office/img/about-2.jpg') }}" alt="" style="margin-top: -25%;">
+				</div>
+			</div>
+			<div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
+				<p class="d-inline-block border rounded-pill py-1 px-4">À propos de nous</p>
+				<h1 class="mb-4">Pourquoi nous faire confiance ? Apprenez à nous connaître</h1>
+				<p>Notre clinique s’engage à offrir des soins de qualité, alliant expertise médicale, technologies de pointe et approche humaine. Nous mettons tout en œuvre pour assurer le bien-être et la sécurité de nos patients, avec une équipe dédiée et un service adapté à chaque besoin.</p>
+				<p class="mb-4">Fondée sur des valeurs d’excellence, d’éthique et de compassion, notre clinique place le patient au cœur de ses préoccupations. Grâce à une gestion efficace, un personnel qualifié et une infrastructure moderne, nous garantissons une prise en charge optimale et une expérience de soins en toute sérénité.</p>
+				<p>
+					<i class="far fa-check-circle text-primary me-3"></i>Des soins de santé de qualité</p>
+				<p>
+					<i class="far fa-check-circle text-primary me-3"></i>Uniquement des médecins qualifiés</p>
+				<p>
+					<i class="far fa-check-circle text-primary me-3"></i>Professionnels de la recherche médicale</p>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- About End -->
 
 
-    <!-- Feature Start -->
-    <div class="container-fluid bg-primary overflow-hidden my-5 px-lg-0">
-        <div class="container feature px-lg-0">
-            <div class="row g-0 mx-lg-0">
-                <div class="col-lg-6 feature-text py-5 wow fadeIn" data-wow-delay="0.1s">
-                    <div class="p-lg-5 ps-lg-0">
-                        <p class="d-inline-block border rounded-pill text-light py-1 px-4">Fonctionnalités</p>
-                        <h1 class="text-white mb-4">Pourquoi nous choisir ?</h1>
-                        <p class="text-white mb-4 pb-2">Nous vous offrons des soins de qualité, alliant expertise médicale et technologies modernes. Notre équipe dédiée est là pour vous garantir une prise en charge rapide et personnalisée, tout en vous apportant un soutien constant et humain.</p>
-                        <div class="row g-4">
-                            <div class="col-6">
-                                <div class="d-flex align-items-center">
-                                    <div class="d-flex flex-shrink-0 align-items-center justify-content-center rounded-circle bg-light" style="width: 55px; height: 55px;">
-                                        <i class="fa fa-user-md text-primary"></i>
-                                    </div>
-                                    <div class="ms-4">
-                                        <p class="text-white mb-2">Expérience</p>
-                                        <h5 class="text-white mb-0">Médecins</h5>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-6">
-                                <div class="d-flex align-items-center">
-                                    <div class="d-flex flex-shrink-0 align-items-center justify-content-center rounded-circle bg-light" style="width: 55px; height: 55px;">
-                                        <i class="fa fa-check text-primary"></i>
-                                    </div>
-                                    <div class="ms-4">
-                                        <p class="text-white mb-2">Qualité</p>
-                                        <h5 class="text-white mb-0">Services</h5>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-6">
-                                <div class="d-flex align-items-center">
-                                    <div class="d-flex flex-shrink-0 align-items-center justify-content-center rounded-circle bg-light" style="width: 55px; height: 55px;">
-                                        <i class="fa fa-comment-medical text-primary"></i>
-                                    </div>
-                                    <div class="ms-4">
-                                        <p class="text-white mb-2">Consultation</p>
-                                        <h5 class="text-white mb-0">positive</h5>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-6">
-                                <div class="d-flex align-items-center">
-                                    <div class="d-flex flex-shrink-0 align-items-center justify-content-center rounded-circle bg-light" style="width: 55px; height: 55px;">
-                                        <i class="fa fa-headphones text-primary"></i>
-                                    </div>
-                                    <div class="ms-4">
-                                        <p class="text-white mb-2">Support</p>
-                                        <h5 class="text-white mb-0">24 heures</h5>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 pe-lg-0 wow fadeIn" data-wow-delay="0.5s" style="min-height: 400px;">
-                    <div class="position-relative h-100">
-                        <img class="position-absolute img-fluid w-100 h-100" src="{{ asset('assets/front-office/img/feature.jpg') }}" style="object-fit: cover;" alt="">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Feature End -->
+<!-- Feature Start -->
+<div class="container-fluid bg-primary overflow-hidden my-5 px-lg-0">
+	<div class="container feature px-lg-0">
+		<div class="row g-0 mx-lg-0">
+			<div class="col-lg-6 feature-text py-5 wow fadeIn" data-wow-delay="0.1s">
+				<div class="p-lg-5 ps-lg-0">
+					<p class="d-inline-block border rounded-pill text-light py-1 px-4">Fonctionnalités</p>
+					<h1 class="text-white mb-4">Pourquoi nous choisir ?</h1>
+					<p class="text-white mb-4 pb-2">Nous vous offrons des soins de qualité, alliant expertise médicale et technologies modernes. Notre équipe dédiée est là pour vous garantir une prise en charge rapide et personnalisée, tout en vous apportant un soutien constant et humain.</p>
+					<div class="row g-4">
+						<div class="col-6">
+							<div class="d-flex align-items-center">
+								<div class="d-flex flex-shrink-0 align-items-center justify-content-center rounded-circle bg-light" style="width: 55px; height: 55px;">
+									<i class="fa fa-user-md text-primary"></i>
+								</div>
+								<div class="ms-4">
+									<p class="text-white mb-2">Expérience</p>
+									<h5 class="text-white mb-0">Médecins</h5>
+								</div>
+							</div>
+						</div>
+						<div class="col-6">
+							<div class="d-flex align-items-center">
+								<div class="d-flex flex-shrink-0 align-items-center justify-content-center rounded-circle bg-light" style="width: 55px; height: 55px;">
+									<i class="fa fa-check text-primary"></i>
+								</div>
+								<div class="ms-4">
+									<p class="text-white mb-2">Qualité</p>
+									<h5 class="text-white mb-0">Services</h5>
+								</div>
+							</div>
+						</div>
+						<div class="col-6">
+							<div class="d-flex align-items-center">
+								<div class="d-flex flex-shrink-0 align-items-center justify-content-center rounded-circle bg-light" style="width: 55px; height: 55px;">
+									<i class="fa fa-comment-medical text-primary"></i>
+								</div>
+								<div class="ms-4">
+									<p class="text-white mb-2">Consultation</p>
+									<h5 class="text-white mb-0">positive</h5>
+								</div>
+							</div>
+						</div>
+						<div class="col-6">
+							<div class="d-flex align-items-center">
+								<div class="d-flex flex-shrink-0 align-items-center justify-content-center rounded-circle bg-light" style="width: 55px; height: 55px;">
+									<i class="fa fa-headphones text-primary"></i>
+								</div>
+								<div class="ms-4">
+									<p class="text-white mb-2">Support</p>
+									<h5 class="text-white mb-0">24 heures</h5>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-6 pe-lg-0 wow fadeIn" data-wow-delay="0.5s" style="min-height: 400px;">
+				<div class="position-relative h-100">
+					<img class="position-absolute img-fluid w-100 h-100" src="{{ asset('assets/front-office/img/feature.jpg') }}" style="object-fit: cover;" alt="">
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Feature End -->
 
 
-    <!-- Team Start -->
-    <div class="container-xxl py-5">
-        <div class="container">
-            <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
-                <p class="d-inline-block border rounded-pill py-1 px-4">Médecins</p>
-                <h1>Nos médecins expérimentés</h1>
-            </div>
-            <div class="row g-4">
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="team-item position-relative rounded overflow-hidden">
-                        <div class="overflow-hidden">
-                            <img class="img-fluid" src="{{asset('assets/front-office/img/team-1.jpg')}}" alt="">
-                        </div>
-                        <div class="team-text bg-light text-center p-4">
-                            <h5>Fatma Bacha</h5>
-                            <p class="text-primary">Cardiologie</p>
-                            <div class="team-social text-center">
-                                <a class="btn btn-square" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-square" href=""><i class="fab fa-instagram"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="team-item position-relative rounded overflow-hidden">
-                        <div class="overflow-hidden">
-                            <img class="img-fluid" src="{{asset('assets/front-office/img/team-2.jpg')}}" alt="">
-                        </div>
-                        <div class="team-text bg-light text-center p-4">
-                            <h5>Slim Sassi</h5>
-                            <p class="text-primary">Pneumologie</p>
-                            <div class="team-social text-center">
-                                <a class="btn btn-square" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-square" href=""><i class="fab fa-instagram"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="team-item position-relative rounded overflow-hidden">
-                        <div class="overflow-hidden">
-                            <img class="img-fluid" src="{{asset('assets/front-office/img/team-3.jpg')}}" alt="">
-                        </div>
-                        <div class="team-text bg-light text-center p-4">
-                            <h5>Yasmine Aboudi</h5>
-                            <p class="text-primary">Pédiatrie</p>
-                            <div class="team-social text-center">
-                                <a class="btn btn-square" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-square" href=""><i class="fab fa-instagram"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
-                    <div class="team-item position-relative rounded overflow-hidden">
-                        <div class="overflow-hidden">
-                            <img class="img-fluid" src="{{asset('assets/front-office/img/team-4.jpg')}}" alt="">
-                        </div>
-                        <div class="team-text bg-light text-center p-4">
-                            <h5>Mahdi Saoudi</h5>
-                            <p class="text-primary">Radiologie</p>
-                            <div class="team-social text-center">
-                                <a class="btn btn-square" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-square" href=""><i class="fab fa-instagram"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Team End -->
-        
-    {% endblock %}
+<!-- Team Start -->
+<div class="container-xxl py-5">
+	<div class="container">
+		<div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+			<p class="d-inline-block border rounded-pill py-1 px-4">Médecins</p>
+			<h1>Nos médecins expérimentés</h1>
+		</div>
+		<div class="row g-4">
+			<div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+				<div class="team-item position-relative rounded overflow-hidden">
+					<div class="overflow-hidden">
+						<img class="img-fluid" src="{{asset('assets/front-office/img/team-1.jpg')}}" alt="">
+					</div>
+					<div class="team-text bg-light text-center p-4">
+						<h5>Fatma Bacha</h5>
+						<p class="text-primary">Cardiologie</p>
+						<div class="team-social text-center">
+							<a class="btn btn-square" href="">
+								<i class="fab fa-facebook-f"></i>
+							</a>
+							<a class="btn btn-square" href="">
+								<i class="fab fa-twitter"></i>
+							</a>
+							<a class="btn btn-square" href="">
+								<i class="fab fa-instagram"></i>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+				<div class="team-item position-relative rounded overflow-hidden">
+					<div class="overflow-hidden">
+						<img class="img-fluid" src="{{asset('assets/front-office/img/team-2.jpg')}}" alt="">
+					</div>
+					<div class="team-text bg-light text-center p-4">
+						<h5>Slim Sassi</h5>
+						<p class="text-primary">Pneumologie</p>
+						<div class="team-social text-center">
+							<a class="btn btn-square" href="">
+								<i class="fab fa-facebook-f"></i>
+							</a>
+							<a class="btn btn-square" href="">
+								<i class="fab fa-twitter"></i>
+							</a>
+							<a class="btn btn-square" href="">
+								<i class="fab fa-instagram"></i>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+				<div class="team-item position-relative rounded overflow-hidden">
+					<div class="overflow-hidden">
+						<img class="img-fluid" src="{{asset('assets/front-office/img/team-3.jpg')}}" alt="">
+					</div>
+					<div class="team-text bg-light text-center p-4">
+						<h5>Yasmine Aboudi</h5>
+						<p class="text-primary">Pédiatrie</p>
+						<div class="team-social text-center">
+							<a class="btn btn-square" href="">
+								<i class="fab fa-facebook-f"></i>
+							</a>
+							<a class="btn btn-square" href="">
+								<i class="fab fa-twitter"></i>
+							</a>
+							<a class="btn btn-square" href="">
+								<i class="fab fa-instagram"></i>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
+				<div class="team-item position-relative rounded overflow-hidden">
+					<div class="overflow-hidden">
+						<img class="img-fluid" src="{{asset('assets/front-office/img/team-4.jpg')}}" alt="">
+					</div>
+					<div class="team-text bg-light text-center p-4">
+						<h5>Mahdi Saoudi</h5>
+						<p class="text-primary">Radiologie</p>
+						<div class="team-social text-center">
+							<a class="btn btn-square" href="">
+								<i class="fab fa-facebook-f"></i>
+							</a>
+							<a class="btn btn-square" href="">
+								<i class="fab fa-twitter"></i>
+							</a>
+							<a class="btn btn-square" href="">
+								<i class="fab fa-instagram"></i>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Team End -->{% endblock %}

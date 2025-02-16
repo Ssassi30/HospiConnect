@@ -27,15 +27,15 @@ class Analyse
 
     #[ORM\OneToOne(inversedBy: 'analyse', cascade: ['persist', 'remove'])]
     #[ORM\JoinColumn(nullable: false)]
-    private ?rendezvousanalyse $rdv = null;
+    private ?Rendezvousanalyse $rdv = null;
 
     #[ORM\ManyToOne(inversedBy: 'analyses')]
     #[ORM\JoinColumn(nullable: false)]
-    private ?user $patient = null;
+    private ?User $patient = null;
 
     #[ORM\ManyToOne(inversedBy: 'analyses')]
     #[ORM\JoinColumn(nullable: false)]
-    private ?user $personnel = null;
+    private ?User $personnel = null;
 
     /**
      * @var Collection<int, DetailAnalyse>

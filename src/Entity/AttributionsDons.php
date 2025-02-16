@@ -19,15 +19,15 @@ class AttributionsDons
 
     #[ORM\ManyToOne(inversedBy: 'attributionsDons')]
     #[ORM\JoinColumn(nullable: false)]
-    private ?dons $don_id = null;
+    private ?Dons $don_id = null;
 
     #[ORM\OneToOne(inversedBy: 'attributionsDons', cascade: ['persist', 'remove'])]
     #[ORM\JoinColumn(nullable: false)]
-    private ?demandesdons $demande_id = null;
+    private ?Demandesdons $demande_id = null;
 
     #[ORM\ManyToOne(inversedBy: 'attributionsDons')]
     #[ORM\JoinColumn(nullable: false)]
-    private ?user $beneficiaire_id = null;
+    private ?User $beneficiaire_id = null;
 
     #[ORM\Column(type: Types::DATE_MUTABLE)]
     private ?\DateTimeInterface $date_attribution = null;

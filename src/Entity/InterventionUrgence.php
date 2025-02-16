@@ -21,7 +21,7 @@ class InterventionUrgence
 
     #[ORM\ManyToOne(inversedBy: 'interventionUrgences')]
     #[ORM\JoinColumn(nullable: false)]
-    private ?user $id_patient = null;
+    private ?User $id_patient = null;
 
     /**
      * @var Collection<int, user>
@@ -31,7 +31,7 @@ class InterventionUrgence
 
     #[ORM\ManyToOne(inversedBy: 'interventionUrgences')]
     #[ORM\JoinColumn(nullable: false)]
-    private ?salle $id_salle = null;
+    private ?Salle $id_salle = null;
 
     #[ORM\Column(length: 255)]
     private ?string $type_intervention = null;

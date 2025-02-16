@@ -2,130 +2,170 @@
 
 {% block body %}
 
-<style>
-.container-xxl {
-  position: relative;
-  min-height: 100vh;
-  overflow: hidden;
-}
+	<style>
+		.container-xxl {
+			position: relative;
+			min-height: 100vh;
+			overflow: hidden;
+		}
 
-.spark {
-  position: fixed;
-  pointer-events: none;
-  z-index: 0;
-  opacity: 0;
-  font-size: 1rem;
-  animation: spark-flow 8s infinite linear;
-  top: -10%;
-}
+		.spark {
+			position: fixed;
+			pointer-events: none;
+			z-index: 0;
+			opacity: 0;
+			font-size: 1rem;
+			animation: spark-flow 8s infinite linear;
+			top: -10%;
+		}
 
-@keyframes spark-flow {
-  0% {
-    transform: translateY(-100vh) rotate(0deg) scale(0.5);
-    opacity: 0.8;
-  }
-  100% {
-    transform: translateY(100vh) rotate(720deg) scale(1.5);
-    opacity: 0;
-  }
-}
+		@keyframes spark-flow {
+			0% {
+				transform: translateY(-100vh) rotate(0deg) scale(0.5);
+				opacity: 0.8;
+			}
+			100% {
+				transform: translateY(100vh) rotate(720deg) scale(1.5);
+				opacity: 0;
+			}
+		}
 
-.authentication-wrapper {
-  position: relative;
-  z-index: 1;
-}
-</style>
+		.authentication-wrapper {
+			position: relative;
+			z-index: 1;
+		}
+	</style>
 
-<div class="container-xxl">
-  {% for i in 1..40 %}<div class="spark" style="left: {{ random(0, 95) }}%">✦</div>{% endfor %}
+	<div class="container-xxl">
+		{% for i in 1..40 %}
+			<div class="spark" style="left: {{ random(0, 95) }}%">✦</div>
+		{% endfor %}
 
-  <div class="authentication-wrapper authentication-basic container-p-y">
-    <div class="authentication-inner">
-      <div class="card">
-        <div class="card-body">
-          <h4 class="mb-2">Politique de Confidentialité</h4>
-          <p><strong>1. Données Collectées</strong></p>
-          <ul>
-            <li><strong>Patients :</strong> Informations médicales, coordonnées, historique des rendez-vous, données biométriques (empreintes digitales, reconnaissance faciale).</li>
-            <li><strong>Donateurs :</strong> Informations de paiement, historique des dons, préférences de communication.</li>
-            <li><strong>Staff Médical :</strong> Qualifications, identifiants biométriques, planning, accès aux systèmes sensibles.</li>
-          </ul>
-          <p><strong>2. Utilisation des Données</strong></p>
-          <ul>
-            <li>Gestion des soins patients</li>
-            <li>Coordination du personnel</li>
-            <li>Traçabilité des dons</li>
-            <li>Amélioration des services</li>
-            <li>Conformité légale avec la loi tunisienne sur la protection des données personnelles (Loi n° 2004-63) et le RGPD</li>
-          </ul>
-          <p><strong>3. Partage des Informations</strong></p>
-          <ul>
-            <li>Médecins traitants, services d'urgence, partenaires financiers, autorités sanitaires tunisiennes.</li>
-          </ul>
-          <p><strong>4. Sécurité</strong></p>
-          <ul>
-            <li>Chiffrement AES-256, audit trimestriel, authentification biométrique (empreinte digitale, reconnaissance faciale), authentification à 2 facteurs.</li>
-          </ul>
-          <p><strong>5. Droits des Utilisateurs</strong></p>
-          <ul>
-            <li>Accès, rectification, portabilité, suppression des données conformément à la législation tunisienne.</li>
-          </ul>
-          <p><strong>6. Conservation</strong></p>
-          <ul>
-            <li>Dossiers patients : 15 ans après la dernière interaction.</li>
-            <li>Données financières : 10 ans.</li>
-            <li>Logs d'accès : 3 ans.</li>
-            <li>Comptes inactifs : désactivés après 1 an d'inactivité, mais données conservées pendant 10 ans.</li>
-          </ul>
+		<div class="authentication-wrapper authentication-basic container-p-y">
+			<div class="authentication-inner">
+				<div class="card">
+					<div class="card-body">
+						<h4 class="mb-2">Politique de Confidentialité</h4>
+						<p>
+							<strong>1. Données Collectées</strong>
+						</p>
+						<ul>
+							<li>
+								<strong>Patients :</strong>
+								Informations médicales, coordonnées, historique des rendez-vous, données biométriques (empreintes digitales, reconnaissance faciale).</li>
+							<li>
+								<strong>Donateurs :</strong>
+								Informations de paiement, historique des dons, préférences de communication.</li>
+							<li>
+								<strong>Staff Médical :</strong>
+								Qualifications, identifiants biométriques, planning, accès aux systèmes sensibles.</li>
+						</ul>
+						<p>
+							<strong>2. Utilisation des Données</strong>
+						</p>
+						<ul>
+							<li>Gestion des soins patients</li>
+							<li>Coordination du personnel</li>
+							<li>Traçabilité des dons</li>
+							<li>Amélioration des services</li>
+							<li>Conformité légale avec la loi tunisienne sur la protection des données personnelles (Loi n° 2004-63) et le RGPD</li>
+						</ul>
+						<p>
+							<strong>3. Partage des Informations</strong>
+						</p>
+						<ul>
+							<li>Médecins traitants, services d'urgence, partenaires financiers, autorités sanitaires tunisiennes.</li>
+						</ul>
+						<p>
+							<strong>4. Sécurité</strong>
+						</p>
+						<ul>
+							<li>Chiffrement AES-256, audit trimestriel, authentification biométrique (empreinte digitale, reconnaissance faciale), authentification à 2 facteurs.</li>
+						</ul>
+						<p>
+							<strong>5. Droits des Utilisateurs</strong>
+						</p>
+						<ul>
+							<li>Accès, rectification, portabilité, suppression des données conformément à la législation tunisienne.</li>
+						</ul>
+						<p>
+							<strong>6. Conservation</strong>
+						</p>
+						<ul>
+							<li>Dossiers patients : 15 ans après la dernière interaction.</li>
+							<li>Données financières : 10 ans.</li>
+							<li>Logs d'accès : 3 ans.</li>
+							<li>Comptes inactifs : désactivés après 1 an d'inactivité, mais données conservées pendant 10 ans.</li>
+						</ul>
 
-          <h4 class="mt-4">Conditions d'Utilisation</h4>
-          <p><strong>1. Acceptation</strong></p>
-          <ul>
-            <li>Usage réservé aux ≥ 16 ans, consentement requis.</li>
-          </ul>
-          <p><strong>2. Comptes</strong></p>
-          <ul>
-            <li>Interdiction de partager les identifiants.</li>
-          </ul>
-          <p><strong>3. Authentification</strong></p>
-          <ul>
-            <li>Connexion via empreinte digitale et reconnaissance faciale.</li>
-          </ul>
-          <p><strong>4. Usage Autorisé</strong></p>
-          <ul>
-            <li>Patients : prise de rendez-vous, accès aux résultats.</li>
-            <li>Donateurs : suivi des contributions.</li>
-            <li>Personnel : gestion des dossiers.</li>
-          </ul>
-          <p><strong>5. Interdictions</strong></p>
-          <ul>
-            <li>Contournement des sécurités, extraction de données.</li>
-          </ul>
-          <p><strong>6. Propriété Intellectuelle</strong></p>
-          <ul>
-            <li>Protection des bases de données médicales, algorithmes brevetés.</li>
-          </ul>
-          <p><strong>7. Responsabilités</strong></p>
-          <ul>
-            <li>Exactitude des informations fournies, signalement des failles.</li>
-          </ul>
-          <p><strong>8. Résiliation</strong></p>
-          <ul>
-            <li>Compte désactivé après 1 an d'inactivité, données conservées pendant 10 ans.</li>
-          </ul>
-          <p><strong>9. Évolution</strong></p>
-          <ul>
-            <li>Notification 30 jours avant modification.</li>
-          </ul>
-          <p><strong>10. Juridiction</strong></p>
-          <ul>
-            <li>Application des lois tunisiennes sur la protection des données personnelles.</li>
-            <li>Tribunaux compétents : tribunaux tunisiens, médiation préalable.</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+						<h4 class="mt-4">Conditions d'Utilisation</h4>
+						<p>
+							<strong>1. Acceptation</strong>
+						</p>
+						<ul>
+							<li>Usage réservé aux ≥ 16 ans, consentement requis.</li>
+						</ul>
+						<p>
+							<strong>2. Comptes</strong>
+						</p>
+						<ul>
+							<li>Interdiction de partager les identifiants.</li>
+						</ul>
+						<p>
+							<strong>3. Authentification</strong>
+						</p>
+						<ul>
+							<li>Connexion via empreinte digitale et reconnaissance faciale.</li>
+						</ul>
+						<p>
+							<strong>4. Usage Autorisé</strong>
+						</p>
+						<ul>
+							<li>Patients : prise de rendez-vous, accès aux résultats.</li>
+							<li>Donateurs : suivi des contributions.</li>
+							<li>Personnel : gestion des dossiers.</li>
+						</ul>
+						<p>
+							<strong>5. Interdictions</strong>
+						</p>
+						<ul>
+							<li>Contournement des sécurités, extraction de données.</li>
+						</ul>
+						<p>
+							<strong>6. Propriété Intellectuelle</strong>
+						</p>
+						<ul>
+							<li>Protection des bases de données médicales, algorithmes brevetés.</li>
+						</ul>
+						<p>
+							<strong>7. Responsabilités</strong>
+						</p>
+						<ul>
+							<li>Exactitude des informations fournies, signalement des failles.</li>
+						</ul>
+						<p>
+							<strong>8. Résiliation</strong>
+						</p>
+						<ul>
+							<li>Compte désactivé après 1 an d'inactivité, données conservées pendant 10 ans.</li>
+						</ul>
+						<p>
+							<strong>9. Évolution</strong>
+						</p>
+						<ul>
+							<li>Notification 30 jours avant modification.</li>
+						</ul>
+						<p>
+							<strong>10. Juridiction</strong>
+						</p>
+						<ul>
+							<li>Application des lois tunisiennes sur la protection des données personnelles.</li>
+							<li>Tribunaux compétents : tribunaux tunisiens, médiation préalable.</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 
 {% endblock %}

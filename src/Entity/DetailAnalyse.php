@@ -22,11 +22,11 @@ class DetailAnalyse
 
     #[ORM\ManyToOne(inversedBy: 'detailAnalyses')]
     #[ORM\JoinColumn(nullable: false)]
-    private ?analyse $analyse = null;
+    private ?Analyse $analyse = null;
 
     #[ORM\ManyToOne(inversedBy: 'detailAnalyses')]
     #[ORM\JoinColumn(nullable: false)]
-    private ?typeanalyse $type_Analyse = null;
+    private ?TypeAnalyse $type_Analyse = null;
 
     public function getId(): ?int
     {
@@ -69,12 +69,12 @@ class DetailAnalyse
         return $this;
     }
 
-    public function getTypeAnalyse(): ?typeanalyse
+    public function getTypeAnalyse(): ?typeAnalyse
     {
         return $this->type_Analyse;
     }
 
-    public function setTypeAnalyse(?typeanalyse $type_Analyse): static
+    public function setTypeAnalyse(?typeAnalyse $type_Analyse): static
     {
         $this->type_Analyse = $type_Analyse;
 
